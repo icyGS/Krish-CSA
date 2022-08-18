@@ -1,1 +1,1 @@
-Sitemap: https://fastpages.fast.ai/sitemap.xml
+Sitemap: https://icygs.github.io/Krish-CSA/sitemap.xml
