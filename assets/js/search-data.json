@@ -24,10 +24,10 @@
   
     
         ,"post2": {
-            "title": "Java Jupyter Notebook",
-            "content": "public class HelloStatic { public static void main(String[] args) { System.out.println(&quot;Hello!&quot;); } } HelloStatic.main(null); . File &#34;/var/folders/yn/0qsx2k3j17b061mcq5bkx2wm0000gn/T/ipykernel_46589/2767543007.py&#34;, line 1 public class HelloStatic { ^ SyntaxError: invalid syntax .",
-            "url": "https://icygs.github.io/Krish-CSA/jupyter/2022/08/19/java_jupyter.html",
-            "relUrl": "/jupyter/2022/08/19/java_jupyter.html",
+            "title": "Java Notebook",
+            "content": "System.out.println(&quot;Hello!&quot;&quot;) .",
+            "url": "https://icygs.github.io/Krish-CSA/2022/08/19/java.html",
+            "relUrl": "/2022/08/19/java.html",
             "date": " • Aug 19, 2022"
         }
         
