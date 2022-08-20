@@ -2,8 +2,8 @@
   
     
         "post0": {
-            "title": "Minor markdown proof",
-            "content": "This is a minor markdown change .",
+            "title": "Python Jupyter Notebook",
+            "content": "print (&quot;Hello&quot;) . Hello . This is a minor markdown change .",
             "url": "https://icygs.github.io/Krish-CSA/jupyter/2022/08/19/new_jupyter.html",
             "relUrl": "/jupyter/2022/08/19/new_jupyter.html",
             "date": " • Aug 19, 2022"
