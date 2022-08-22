@@ -3,42 +3,42 @@
     
         "post0": {
             "title": "Python Jupyter Notebook",
-            "content": "print (&quot;Hello&quot;) . Hello . This is a minor markdown change .",
-            "url": "https://icygs.github.io/Krish-CSA/jupyter/2022/08/19/new_jupyter.html",
-            "relUrl": "/jupyter/2022/08/19/new_jupyter.html",
-            "date": " • Aug 19, 2022"
+            "content": "Printing &quot;Hello!&quot; using Python . print (&quot;Hello&quot;) . Hello . This is a minor markdown change .",
+            "url": "https://icygs.github.io/Krish-CSA/jupyter/2022/08/21/Python-Notebook.html",
+            "relUrl": "/jupyter/2022/08/21/Python-Notebook.html",
+            "date": " • Aug 21, 2022"
         }
         
     
   
     
         ,"post1": {
-            "title": "A Minor Markdwon",
-            "content": "Minor Markdown . Minor markdown . What Am I Doing? . Testing out markdown and learning how to make a file. .",
-            "url": "https://icygs.github.io/Krish-CSA/markdown/2022/08/19/minor-markdown.html",
-            "relUrl": "/markdown/2022/08/19/minor-markdown.html",
-            "date": " • Aug 19, 2022"
+            "title": "Java Jupyter Notebook",
+            "content": "Printing &quot;Hello!&quot; using Java . System.out.println(&quot;Hello!&quot;) . Hello! .",
+            "url": "https://icygs.github.io/Krish-CSA/jupyter/2022/08/21/Java-Notebook.html",
+            "relUrl": "/jupyter/2022/08/21/Java-Notebook.html",
+            "date": " • Aug 21, 2022"
         }
         
     
   
     
         ,"post2": {
-            "title": "Java Notebook",
-            "content": "System.out.println(&quot;Hello!&quot;) . Hello! .",
-            "url": "https://icygs.github.io/Krish-CSA/2022/08/19/java.html",
-            "relUrl": "/2022/08/19/java.html",
-            "date": " • Aug 19, 2022"
+            "title": "CSA Goals",
+            "content": "CSA Goals . Learn how to use Markdown | Learn how to use Java | Code code code | Do good on the AP exam | .",
+            "url": "https://icygs.github.io/Krish-CSA/markdown/2022/08/21/Goals-For-CSA.html",
+            "relUrl": "/markdown/2022/08/21/Goals-For-CSA.html",
+            "date": " • Aug 21, 2022"
         }
         
     
   
     
         ,"post3": {
-            "title": "Title",
-            "content": "",
-            "url": "https://icygs.github.io/Krish-CSA/2022/08/19/java-jvsc-5e8a5911-8f65-4f15-af6a-784fd72857a01d20fe39-aaa0-4b17-8b9a-2fe852fbea4b.html",
-            "relUrl": "/2022/08/19/java-jvsc-5e8a5911-8f65-4f15-af6a-784fd72857a01d20fe39-aaa0-4b17-8b9a-2fe852fbea4b.html",
+            "title": "A Minor Markdwon",
+            "content": "Minor Markdown . Minor markdown . What Am I Doing? . Testing out markdown and learning how to make a file. .",
+            "url": "https://icygs.github.io/Krish-CSA/markdown/2022/08/19/minor-markdown.html",
+            "relUrl": "/markdown/2022/08/19/minor-markdown.html",
             "date": " • Aug 19, 2022"
         }
         
