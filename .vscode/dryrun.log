@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/krishpatil/Krish-CSA'
+cat Makefile
+make: Leaving directory `/Users/krishpatil/Krish-CSA'
+ 
