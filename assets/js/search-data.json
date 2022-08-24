@@ -4,8 +4,8 @@
         "post0": {
             "title": "Java Primitives Notebook",
             "content": "Define in a Class the following data types Demonstrate use of Primitives: int, double, boolean, string Demonstrate use of Wrapper Class object: String . public class Primitives{ int anInt = 50; double aDouble = 5.5; boolean aBoolean = true; String aString = &quot;I love to code code code&quot;; } System.out.println(anInt); System.out.println(aDouble); System.out.println(aBoolean); System.out.println(aString); . 50 5.5 true I love to code code code .",
-            "url": "https://icygs.github.io/Krish-CSA/jupyter/2022/08/23/javaclasses.html",
-            "relUrl": "/jupyter/2022/08/23/javaclasses.html",
+            "url": "https://icygs.github.io/Krish-CSA/jupyter/2022/08/23/Java-Primitives.html",
+            "relUrl": "/jupyter/2022/08/23/Java-Primitives.html",
             "date": " • Aug 23, 2022"
         }
         
