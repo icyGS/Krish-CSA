@@ -168,23 +168,6 @@ Demonstrate use of Wrapper Class object: String</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>50
-5.5
-true
-I love to code code code
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -200,7 +183,8 @@ I love to code code code
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This program asks for a list of numbers. When you are finished, input 0. It will then report the Mean and Standard Deviation of this set of numbers</p>
+<p>This program asks for a list of numbers. When you are finished, input 0. It will then report Standard Deviation of this set of numbers.</p>
+<p>Note: This program was created to assist with an AP Biology Assignment where we had to calculate the Standard Deviation of a dataset.</p>
 
 </div>
 </div>
@@ -212,18 +196,101 @@ I love to code code code
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">STDEV</span><span class="p">{</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">STDevCalculator</span> <span class="p">{</span>
+    <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">values</span><span class="p">;</span> 
+
+
+    <span class="kd">public</span> <span class="nf">STDevCalculator</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">values</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">enterValues</span><span class="p">();</span>
+    <span class="p">}</span>
+
     
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isZero</span><span class="p">(</span><span class="kt">double</span> <span class="n">value</span><span class="p">){</span>
+        <span class="kt">double</span> <span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.001</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">value</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="n">threshold</span> <span class="o">&amp;&amp;</span> <span class="n">value</span> <span class="o">&lt;=</span> <span class="n">threshold</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">enterValues</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">Scanner</span> <span class="n">input</span><span class="p">;</span>
+
+        <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Enter a Value, 0 to exit: "</span><span class="p">);</span>
+            <span class="k">try</span> <span class="p">{</span>
+                <span class="kt">double</span> <span class="n">sampleInputDouble</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sampleInputDouble</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">isZero</span><span class="p">(</span><span class="n">sampleInputDouble</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span>       
+                <span class="k">else</span> <span class="k">this</span><span class="p">.</span><span class="na">values</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">sampleInputDouble</span><span class="p">);</span>   
+            <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>  
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Not an double (form like 9.99), "</span> <span class="o">+</span> <span class="n">e</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">input</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">stdev</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  
+        <span class="kt">double</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">double</span> <span class="n">num</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="na">values</span><span class="p">)</span> <span class="p">{</span>   
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">num</span><span class="p">;</span> 
+        <span class="p">}</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">total</span> <span class="o">/</span> <span class="n">values</span><span class="p">.</span><span class="na">size</span><span class="p">();</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">double</span> <span class="n">num</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="na">values</span><span class="p">){</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">((</span><span class="n">m</span> <span class="o">-</span> <span class="n">num</span><span class="p">),</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">//Sums up all of the values necessary in the standard deviation equation</span>
+        <span class="p">}</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">((</span><span class="n">sum</span> <span class="o">/</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">values</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)),</span> <span class="mf">0.5</span><span class="p">);</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">s</span><span class="p">);</span>
+    <span class="p">}</span>
+
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">STDevCalculator</span> <span class="n">values</span> <span class="o">=</span> <span class="k">new</span> <span class="n">STDevCalculator</span><span class="p">();</span> 
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Standard Deviation of dataset: "</span> <span class="o">+</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">"%.2f"</span><span class="p">,</span> <span class="n">values</span><span class="p">.</span><span class="na">stdev</span><span class="p">()));</span>
+    <span class="p">}</span>   
 <span class="p">}</span>
+<span class="n">STDevCalculator</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Enter a Value, 0 to exit: 5.0
+Enter a Value, 0 to exit: 10.0
+Enter a Value, 0 to exit: 15.0
+Enter a Value, 0 to exit: 20.0
+Enter a Value, 0 to exit: 0.0
+Standard Deviation of dataset: 6.45
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Standard Deviation is the amount of variation in a dataset and is very vital in many situations regarding data analysis, making this program quite useful.</p>
+
+</div>
+</div>
+</div>
 </div>
 
 
