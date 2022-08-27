@@ -1,7 +1,7 @@
 ---
 toc: true
 layout: post
-description: My goals for CSA this year
+description: How I'll be taking notes this year
 categories: [college board]
 title: Notes example
 ---
