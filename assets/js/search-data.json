@@ -79,10 +79,10 @@
   
     
         ,"post7": {
-            "title": "Java Jupyter Notebook",
-            "content": "Printing &quot;Hello!&quot; using Java . System.out.println(&quot;Hello!&quot;) . Hello! .",
-            "url": "https://icygs.github.io/Krish-CSA/jupyter/2022/08/21/Java-Notebook.html",
-            "relUrl": "/jupyter/2022/08/21/Java-Notebook.html",
+            "title": "Code.org Objects Hacks",
+            "content": "In java, there are things known as objects. These objects can be defined with the use of classes. . public class Krish{ } . Here we have created the class &quot;Krish&quot;. We can give this object characteristics, as shown below. . public class Krish { String height; int age; public Krish(){ this.height = &quot;68 inches&quot;; this.age = 15; } public void printInformation(){ System.out.println(&quot;Krish is &quot; + height + &quot; tall.&quot;); System.out.println(&quot;He is also &quot; + age + &quot; years old.&quot;); } } public class Sister extends Krish{ String name; int age; public Sister(){ this.name = &quot;Ishna&quot;; this.age = 7; } public void printInformation(){ System.out.println(name + &quot; is Krish&#39;s sister.&quot;); System.out.println(&quot;She is &quot; + age + &quot; years old.&quot;); } } public class Main{ public static void main(String []args) { Krish krish = new Krish(); Sister sister = new Sister(); krish.printInformation(); sister.printInformation(); } } Main.main(null); . Krish is 68 inches tall. He is also 15 years old. Ishna is Krish&#39;s sister. She is 7 years old. . Here we have given the object Krish some characteristics. We can use this object by doing .height or .age and getting the height and age of the object. . Here we can also see that the sister class is extending the Krish class, as Krish&#39;s sister extends himself. This is basically a extension of Krish and all of the variables from Krish. .",
+            "url": "https://icygs.github.io/Krish-CSA/2022/08/21/Java-Notebook.html",
+            "relUrl": "/2022/08/21/Java-Notebook.html",
             "date": " • Aug 21, 2022"
         }
         
