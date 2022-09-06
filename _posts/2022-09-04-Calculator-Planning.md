@@ -27,7 +27,6 @@ Via textbox and buttons
   - Multiplication
   - Division
   - Powers
-  - Square root
   - Mod
   - Trig functions
   - Log functions
