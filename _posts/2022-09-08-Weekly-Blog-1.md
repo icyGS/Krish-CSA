@@ -35,3 +35,10 @@ title: Week 3 Blog
 # CTF Club Goals
 - Learn how to do CTF stuff in general
 - Leadership meeting saturday 9:30 pm
+
+# Reflection from Harvard Video
+- Make sure to look at the good things in life
+- Always appreciate what you have and never compare to others
+- Make sure that when stuff does get hard, you are not overwhelming yourself
+- We should learn to stop putting off work till later so that we don't struggle
+- Really learn to appreciate all the small things in life because it shows us that we are composed of those small things
