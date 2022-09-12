@@ -12,12 +12,20 @@ html, body, input, textarea, select, button {
   background-color: $dark-grey !important;
 }
 
+* {
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
 a {
     color: rgb(245, 247, 249) !important;
 }
 
 a:hover {
     color:$high-emph !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
 }
 
 .site-title, .site-title:visited, .site-nav, .page-link {
