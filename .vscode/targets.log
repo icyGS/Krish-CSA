@@ -6,8 +6,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Wed Sep 21 10:03:35 2022
+
+# Make data base, printed on Fri Sep 23 21:40:27 2022
 
 # Variables
 
@@ -64,7 +67,7 @@ HOME = /Users/krishpatil
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/krishpatil/Library/Application Support/Code/CachedData/e7f30e38c5a4efafeec8ad52861eb772a9ee4dfb
+VSCODE_CODE_CACHE_PATH = /Users/krishpatil/Library/Application Support/Code/CachedData/74b1f979648cc44d385a2286793c226e611f59e7
 # environment
 LOGNAME = krishpatil
 # environment
@@ -104,7 +107,7 @@ TMPDIR = /var/folders/yn/0qsx2k3j17b061mcq5bkx2wm0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/krishpatil/Library/Application Support/Code/1.71.1-main.sock
+VSCODE_IPC_HOOK = /Users/krishpatil/Library/Application Support/Code/1.71.2-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -114,7 +117,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.64730369.64730375
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.65287124.65287130
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
@@ -146,7 +149,7 @@ MAKELEVEL := 0
 # environment
 CONDA_PREFIX = /Users/krishpatil/opt/anaconda3
 # environment
-VSCODE_PID = 55983
+VSCODE_PID = 25498
 # environment
 _CE_CONDA = 
 # environment
@@ -206,6 +209,7 @@ server-detached: .FORCE
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 #  commands to execute (from `Makefile', line 11):
 	docker-compose down || true;
 	docker-compose up -d
@@ -312,14 +316,11 @@ convert: .FORCE
 
 # No general (`VPATH' variable) search path.
 
- 
-make: *** No rule to make target `all'.  Stop.
-
 # # of strings in strcache: 1
 # # of strcache buffers: 1
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Sep 21 10:03:35 2022
+# Finished Make data base on Fri Sep 23 21:40:27 2022
 
  
