@@ -59,13 +59,22 @@ public class ColorScale extends ImageData {
             }
         }
 
-        if (color.equals("Green)")){
+        if (color.equals("Green")){
             for (int i = 0; i < this.height; i++) {
                 for (int j = 0; j < this.width; j++) {
                     Color col = new Color(img.getRGB(j, i));
                     int rgb = new Color(0, col.getGreen(), 0).getRGB();
                     img.setRGB(j, i, rgb);
     
+                }
+            }
+        }
+
+        if (color.equals("Gray")){
+            for (int i = 0; i < this.height; i++){
+                for (int j = 0; j < this.width; j++){
+                    int rgb = img.getRGB(j, i);
+                    int r = 
                 }
             }
         }
