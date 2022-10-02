@@ -51,16 +51,13 @@ abstract class ImageData {
     // Scale or reduce to "scale" percentage provided
     public void resize(int scale) {
         BufferedImage img = null;
-        Image resizedImg = null;  
-
         int width = (int) (this.width * (scale/100.0) + 0.5);
         int height = (int) (this.height * (scale/100.0) + 0.5);
 
         try {
             // read an image to BufferedImage for processing
             img = ImageIO.read(new File(this.inFile));  // set buffer of image data
-            // create a new BufferedImage for drawing
-            resizedImg = img.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+            img.getScaledInstance(width, height, Image.SCALE_SMOOTH);
         } catch (IOException e) {
             return;
         }
