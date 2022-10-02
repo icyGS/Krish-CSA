@@ -599,7 +599,7 @@ Scaled: 226836 304x304  images/tmp/BlueSunset.png
 <h1 id="Color-Scaling">
 <a class="anchor" href="#Color-Scaling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Color Scaling<a class="anchor-link" href="#Color-Scaling"> </a>
 </h1>
-<p>Now, moving onto the hacks. The goal is to be able to scale the colors of the image so that they are Red, Green, or Blue. Rather than creating 3 separate methods to do this, we can rather just make a method that does all 3 at the same time! We can do this by specifying which color we want it to be scaled to (red, green, or blue) and then have a different output for each.</p>
+<p>Now, moving onto the hacks. The goal is to be able to scale the colors of the image so that they are Red, Green, or Blue. Rather than creating 3 separate methods to do this, we can rather just make a method that does all 3 at the same time! We can do this by specifying which color we want it to be scaled to (red, green, or blue) and then have a different output for each. Also, I added gray scaling as well. To do this, you would just take the average of all of the RGB values and then set that as the R, G, and B value of that particular color cell.</p>
 
 </div>
 </div>
@@ -611,7 +611,18 @@ Scaled: 226836 304x304  images/tmp/BlueSunset.png
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ColorScale</span> <span class="kd">extends</span> <span class="n">ImageData</span> <span class="p">{</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kn">package</span> <span class="nn">_notebooks</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.awt.Color</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.image.BufferedImage</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.Files</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.imageio.ImageIO</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ColorScale</span> <span class="kd">extends</span> <span class="n">ImageData</span> <span class="p">{</span>
     
     <span class="kd">public</span> <span class="nf">ColorScale</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="n">String</span> <span class="n">color</span><span class="p">,</span> <span class="n">String</span> <span class="n">ext</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">ext</span><span class="p">);</span>
@@ -661,13 +672,23 @@ Scaled: 226836 304x304  images/tmp/BlueSunset.png
             <span class="p">}</span>
         <span class="p">}</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="n">color</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"Green)"</span><span class="p">)){</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">color</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"Green"</span><span class="p">)){</span>
             <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="na">height</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
                 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="na">width</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
                     <span class="n">Color</span> <span class="n">col</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="na">getRGB</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">));</span>
                     <span class="kt">int</span> <span class="n">rgb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">col</span><span class="p">.</span><span class="na">getGreen</span><span class="p">(),</span> <span class="mi">0</span><span class="p">).</span><span class="na">getRGB</span><span class="p">();</span>
                     <span class="n">img</span><span class="p">.</span><span class="na">setRGB</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">rgb</span><span class="p">);</span>
     
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">color</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"Gray"</span><span class="p">)){</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="na">height</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="na">width</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+                    <span class="n">Color</span> <span class="n">col</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="na">getRGB</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">));</span>
+                    <span class="kt">int</span> <span class="n">rgb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(((</span><span class="n">col</span><span class="p">.</span><span class="na">getRed</span><span class="p">()</span><span class="o">+</span> <span class="n">col</span><span class="p">.</span><span class="na">getGreen</span><span class="p">()</span><span class="o">+</span> <span class="n">col</span><span class="p">.</span><span class="na">getBlue</span><span class="p">())</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="p">((</span><span class="n">col</span><span class="p">.</span><span class="na">getRed</span><span class="p">()</span><span class="o">+</span> <span class="n">col</span><span class="p">.</span><span class="na">getGreen</span><span class="p">()</span><span class="o">+</span> <span class="n">col</span><span class="p">.</span><span class="na">getBlue</span><span class="p">())</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="p">((</span><span class="n">col</span><span class="p">.</span><span class="na">getRed</span><span class="p">()</span><span class="o">+</span> <span class="n">col</span><span class="p">.</span><span class="na">getGreen</span><span class="p">()</span><span class="o">+</span> <span class="n">col</span><span class="p">.</span><span class="na">getBlue</span><span class="p">())</span><span class="o">/</span><span class="mi">3</span><span class="p">)).</span><span class="na">getRGB</span><span class="p">();</span>
+                    <span class="n">img</span><span class="p">.</span><span class="na">setRGB</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">rgb</span><span class="p">);</span>
                 <span class="p">}</span>
             <span class="p">}</span>
         <span class="p">}</span>
@@ -688,6 +709,7 @@ Scaled: 226836 304x304  images/tmp/BlueSunset.png
         <span class="n">BlueSunset</span><span class="p">.</span><span class="na">scale</span><span class="p">(</span><span class="s">"Red"</span><span class="p">);</span>
         <span class="n">BlueSunset</span><span class="p">.</span><span class="na">scale</span><span class="p">(</span><span class="s">"Green"</span><span class="p">);</span>
         <span class="n">BlueSunset</span><span class="p">.</span><span class="na">scale</span><span class="p">(</span><span class="s">"Blue"</span><span class="p">);</span>
+        <span class="n">BlueSunset</span><span class="p">.</span><span class="na">scale</span><span class="p">(</span><span class="s">"Gray"</span><span class="p">);</span>
     <span class="p">}</span>
 
 <span class="p">}</span>
@@ -703,7 +725,7 @@ Scaled: 226836 304x304  images/tmp/BlueSunset.png
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Click on the links if you want to see the <a href="https://icygs.github.io/Krish-CSA/images/BlueSunset.png">original image</a>, the <a href="https://icygs.github.io/Krish-CSA/images/tmp/BlueSunsetRed.png">Red scaled image</a>, the <a href="https://icygs.github.io/Krish-CSA/images/tmp/BlueSunsetGreen.png">Green scaled image</a>, the <a href="https://icygs.github.io/Krish-CSA/images/tmp/BlueSunsetBlue.png">Blue scaled image</a>.</p>
+<p>Click on the links if you want to see the <a href="https://icygs.github.io/Krish-CSA/images/BlueSunset.png">original image</a>, the <a href="https://icygs.github.io/Krish-CSA/images/tmp/BlueSunsetRed.png">Red scaled image</a>, the <a href="https://icygs.github.io/Krish-CSA/images/tmp/BlueSunsetGreen.png">Green scaled image</a>, the <a href="https://icygs.github.io/Krish-CSA/images/tmp/BlueSunsetBlue.png">Blue scaled image</a>, and the <a href="https://icygs.github.io/Krish-CSA/images/tmp/BlueSunsetpng.png">Gray scaled image</a>.</p>
 
 </div>
 </div>
