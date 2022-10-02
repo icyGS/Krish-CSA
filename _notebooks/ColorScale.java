@@ -73,8 +73,9 @@ public class ColorScale extends ImageData {
         if (color.equals("Gray")){
             for (int i = 0; i < this.height; i++){
                 for (int j = 0; j < this.width; j++){
-                    int rgb = img.getRGB(j, i);
-                    int r = 
+                    Color col = new Color(img.getRGB(j,i));
+                    int rgb = new Color(((col.getRed()+ col.getGreen()+ col.getBlue())/3), ((col.getRed()+ col.getGreen()+ col.getBlue())/3), ((col.getRed()+ col.getGreen()+ col.getBlue())/3)).getRGB();
+                    img.setRGB(j, i, rgb);
                 }
             }
         }
@@ -95,6 +96,7 @@ public class ColorScale extends ImageData {
         BlueSunset.scale("Red");
         BlueSunset.scale("Green");
         BlueSunset.scale("Blue");
+        BlueSunset.scale("Gray");
     }
 
 }
