@@ -140,7 +140,7 @@ window.onload = wrap_img;
 <h1 id="Explanation-of-API's">
 <a class="anchor" href="#Explanation-of-API's" aria-hidden="true"><span class="octicon octicon-link"></span></a>Explanation of API's<a class="anchor-link" href="#Explanation-of-API's"> </a>
 </h1>
-<p>API's are basically a way to store a large amount of data and then be able to get that data without having to copy paste it directly from another source. Basically, you can call API's in java and then have that data be transferred so that you can do things with it. JSON is used to transmit data.</p>
+<p>API's are basically a way to store a large amount of data and then be able to get that data without having to copy paste it directly from another source. Basically, you can call API's in java and then have that data be transferred so that you can do things with it. JSON is used to transmit data. With an API, you save so much time. Since they're just basically a massive data pool, you can easily take out data. Unfortunately, these have limitations that we cannot get around without paying a bit, but we will not be doing that in this case.</p>
 
 </div>
 </div>
@@ -185,6 +185,87 @@ window.onload = wrap_img;
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">package</span> <span class="nn">com.nighthawk.spring_portfolio.mvc.translate</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.net.URI</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.net.http.HttpClient</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.net.http.HttpRequest</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.net.http.HttpResponse</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">org.json.simple.JSONObject</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.json.simple.parser.JSONParser</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.http.HttpStatus</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.http.ResponseEntity</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.GetMapping</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestMapping</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RestController</span><span class="p">;</span>
+
+<span class="nd">@RestController</span> <span class="c1">// annotation to create a RESTful web services</span>
+<span class="nd">@RequestMapping</span><span class="p">(</span><span class="s">"/api/google-translate1"</span><span class="p">)</span>  <span class="c1">//prefix of API</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">translate</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">JSONObject</span> <span class="n">body</span><span class="p">;</span> <span class="c1">//last run result</span>
+    <span class="kd">private</span> <span class="n">HttpStatus</span> <span class="n">status</span><span class="p">;</span> <span class="c1">//last run status</span>
+    <span class="n">String</span> <span class="n">last_run</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span> <span class="c1">//last run day of month</span>
+
+    <span class="c1">// GET Covid 19 Stats</span>
+    <span class="nd">@GetMapping</span><span class="p">(</span><span class="s">"/daily"</span><span class="p">)</span>   <span class="c1">//added to end of prefix as endpoint</span>
+    <span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">JSONObject</span><span class="o">&gt;</span> <span class="nf">getTranslate</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="c1">//calls API once a day, sets body and status properties</span>
+        <span class="n">String</span> <span class="n">today</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="p">().</span><span class="na">toString</span><span class="p">().</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span> 
+        <span class="k">if</span> <span class="p">(</span><span class="n">last_run</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="o">!</span><span class="n">today</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">last_run</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">try</span> <span class="p">{</span>  <span class="c1">//APIs can fail (ie Internet or Service down)</span>
+
+                <span class="c1">//RapidAPI header</span>
+                <span class="n">HttpRequest</span> <span class="n">request</span> <span class="o">=</span> <span class="n">HttpRequest</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
+                        <span class="p">.</span><span class="na">uri</span><span class="p">(</span><span class="n">URI</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="s">"https://google-translate1.p.rapidapi.com/language/translate/v2/detect"</span><span class="p">))</span>
+                        <span class="p">.</span><span class="na">header</span><span class="p">(</span><span class="s">"content-type"</span><span class="p">,</span> <span class="s">"application/x-www-form-urlencoded"</span><span class="p">)</span>
+                        <span class="p">.</span><span class="na">header</span><span class="p">(</span><span class="s">"Accept-Encoding"</span><span class="p">,</span> <span class="s">"application/gzip"</span><span class="p">)</span>
+                        <span class="p">.</span><span class="na">header</span><span class="p">(</span><span class="s">"X-RapidAPI-Key"</span><span class="p">,</span> <span class="s">"1549fa8a93msh73da228ed60b0a1p1beb30jsn1480b3d082a4"</span><span class="p">)</span>
+                        <span class="p">.</span><span class="na">header</span><span class="p">(</span><span class="s">"X-RapidAPI-Host"</span><span class="p">,</span> <span class="s">"google-translate1.p.rapidapi.com"</span><span class="p">)</span>
+                        <span class="p">.</span><span class="na">method</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">HttpRequest</span><span class="p">.</span><span class="na">BodyPublishers</span><span class="p">.</span><span class="na">ofString</span><span class="p">(</span><span class="s">"q=English%20is%20hard%2C%20but%20detectably%20so"</span><span class="p">))</span>
+                        <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+                <span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">HttpClient</span><span class="p">.</span><span class="na">newHttpClient</span><span class="p">().</span><span class="na">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">HttpResponse</span><span class="p">.</span><span class="na">BodyHandlers</span><span class="p">.</span><span class="na">ofString</span><span class="p">());</span>
+
+                <span class="c1">//JSONParser extracts text body and parses to JSONObject</span>
+                <span class="k">this</span><span class="p">.</span><span class="na">body</span> <span class="o">=</span> <span class="p">(</span><span class="n">JSONObject</span><span class="p">)</span> <span class="k">new</span> <span class="n">JSONParser</span><span class="p">().</span><span class="na">parse</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="na">body</span><span class="p">());</span>
+                <span class="k">this</span><span class="p">.</span><span class="na">status</span> <span class="o">=</span> <span class="n">HttpStatus</span><span class="p">.</span><span class="na">OK</span><span class="p">;</span>  <span class="c1">//200 success</span>
+                <span class="k">this</span><span class="p">.</span><span class="na">last_run</span> <span class="o">=</span> <span class="n">today</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">//capture failure info</span>
+                <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">status</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+                <span class="n">status</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"status"</span><span class="p">,</span> <span class="s">"RapidApi failure: "</span> <span class="o">+</span> <span class="n">e</span><span class="p">);</span>
+
+                <span class="c1">//Setup object for error</span>
+                <span class="k">this</span><span class="p">.</span><span class="na">body</span> <span class="o">=</span> <span class="p">(</span><span class="n">JSONObject</span><span class="p">)</span> <span class="n">status</span><span class="p">;</span>
+                <span class="k">this</span><span class="p">.</span><span class="na">status</span> <span class="o">=</span> <span class="n">HttpStatus</span><span class="p">.</span><span class="na">INTERNAL_SERVER_ERROR</span><span class="p">;</span> <span class="c1">//500 error</span>
+                <span class="k">this</span><span class="p">.</span><span class="na">last_run</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">//return JSONObject in RESTful style</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">ResponseEntity</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">status</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
