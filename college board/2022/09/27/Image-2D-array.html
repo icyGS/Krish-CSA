@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      11 min read
     
 </span></p>
 
@@ -599,7 +599,7 @@ Scaled: 226836 304x304  images/tmp/BlueSunset.png
 <h1 id="Color-Scaling">
 <a class="anchor" href="#Color-Scaling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Color Scaling<a class="anchor-link" href="#Color-Scaling"> </a>
 </h1>
-<p>Now, moving onto the hacks. The goal is to be able to scale the colors of the image so that they are Red, Green, or Blue. Rather than creating 3 separate methods to do this, we can rather just make a method that does all 3 at the same time! We can do this by specifying which color we want it to be scaled to (red, green, or blue) and then have a different output for each. Also, I added gray scaling as well. To do this, you would just take the average of all of the RGB values and then set that as the R, G, and B value of that particular color cell.</p>
+<p>Now, moving onto the hacks. The goal is to be able to scale the colors of the image so that they are Red, Green, or Blue. Rather than creating 3 separate methods to do this, we can rather just make a method that does all 3 at the same time! We can do this by specifying which color we want it to be scaled to (red, green, or blue) and then have a different output for each. Also, I added gray scaling as well. To do this, you would just take the average of all of the RGB values and then set that as the R, G, and B value of that particular color cell. If you want to do ASCII, input ASCII into the method so that the method converts the image to ASCII.</p>
 
 </div>
 </div>
@@ -637,6 +637,9 @@ Scaled: 226836 304x304  images/tmp/BlueSunset.png
     <span class="nd">@Override</span>
     <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">scale</span><span class="p">(</span><span class="n">String</span> <span class="n">color</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">BufferedImage</span> <span class="n">img</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="n">PrintWriter</span> <span class="n">asciiPrt</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="n">FileWriter</span> <span class="n">asciiWrt</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="n">Color</span> <span class="n">col</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
         
         
         <span class="c1">// Deletes previously named file if exists </span>
@@ -693,6 +696,37 @@ Scaled: 226836 304x304  images/tmp/BlueSunset.png
             <span class="p">}</span>
         <span class="p">}</span>
 
+        <span class="k">if</span><span class="p">(</span><span class="n">color</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"ASCII"</span><span class="p">)){</span>
+            <span class="kd">final</span> <span class="kt">int</span> <span class="n">XLENGTH</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="kd">final</span> <span class="kt">int</span> <span class="n">YLENGTH</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">img</span><span class="p">.</span><span class="na">getHeight</span><span class="p">();</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">img</span><span class="p">.</span><span class="na">getWidth</span><span class="p">();</span> <span class="n">j</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="kt">double</span> <span class="n">colorSum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                    <span class="kt">int</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+                    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">XLENGTH</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">YLENGTH</span><span class="p">;</span> <span class="n">l</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">&lt;</span> <span class="n">img</span><span class="p">.</span><span class="na">getWidth</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">img</span><span class="p">.</span><span class="na">getHeight</span><span class="p">())</span> <span class="p">{</span>
+                                <span class="n">counter</span><span class="o">++</span><span class="p">;</span>
+                                <span class="n">col</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="na">getRGB</span><span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="n">k</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">l</span><span class="p">));</span>
+                                <span class="n">colorSum</span> <span class="o">+=</span> <span class="p">(((</span><span class="n">col</span><span class="p">.</span><span class="na">getRed</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.30</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">col</span><span class="p">.</span><span class="na">getBlue</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.59</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">col</span><span class="p">.</span><span class="na">getGreen</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.11</span><span class="p">)));</span>
+                            <span class="p">}</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+    
+                    <span class="kt">double</span> <span class="n">average</span> <span class="o">=</span> <span class="n">colorSum</span> <span class="o">/</span> <span class="n">counter</span><span class="p">;</span>
+                    <span class="k">try</span> <span class="p">{</span>
+                        <span class="n">asciiPrt</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">asciiChar</span><span class="p">(</span><span class="n">average</span><span class="p">));</span>
+                        <span class="n">asciiPrt</span><span class="p">.</span><span class="na">flush</span><span class="p">();</span>
+                        <span class="n">asciiWrt</span><span class="p">.</span><span class="na">flush</span><span class="p">();</span>
+                    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="p">}</span>
+    
+                <span class="p">}</span>
+
+        <span class="p">}</span>
+
 
 
         <span class="k">try</span> <span class="p">{</span>
@@ -725,7 +759,7 @@ Scaled: 226836 304x304  images/tmp/BlueSunset.png
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Click on the links if you want to see the <a href="https://icygs.github.io/Krish-CSA/images/BlueSunset.png">original image</a>, the <a href="https://icygs.github.io/Krish-CSA/images/tmp/BlueSunsetRed.png">Red scaled image</a>, the <a href="https://icygs.github.io/Krish-CSA/images/tmp/BlueSunsetGreen.png">Green scaled image</a>, the <a href="https://icygs.github.io/Krish-CSA/images/tmp/BlueSunsetBlue.png">Blue scaled image</a>, and the <a href="https://icygs.github.io/Krish-CSA/images/tmp/BlueSunsetpng.png">Gray scaled image</a>.</p>
+<p>Click on the links if you want to see the <a href="https://icygs.github.io/Krish-CSA/images/BlueSunset.png">original image</a>, the <a href="https://icygs.github.io/Krish-CSA/images/tmp/BlueSunsetRed.png">Red scaled image</a>, the <a href="https://icygs.github.io/Krish-CSA/images/tmp/BlueSunsetGreen.png">Green scaled image</a>, the <a href="https://icygs.github.io/Krish-CSA/images/tmp/BlueSunsetBlue.png">Blue scaled image</a>, and the <a href="https://icygs.github.io/Krish-CSA/images/tmp/BlueSunsetGray.png">Gray scaled image</a>. As for the ASCII, it was coded but the output is very scuffed and does not appeal to the eyes so I'm not going to show it (for your own good I assure you). The picture is very monotone and that causes it to not have the best ASCII output.</p>
 
 </div>
 </div>
