@@ -1,27 +1,15 @@
 package _notebooks;
 
-import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.awt.Image;
-import java.awt.Graphics2D;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import javax.imageio.stream.ImageOutputStream;
-import javax.imageio.stream.ImageInputStream;
-import javax.imageio.metadata.IIOMetadata;
-import javax.imageio.IIOImage;
 import javax.imageio.ImageIO;
-import javax.imageio.ImageWriteParam;
-import javax.imageio.ImageWriter;
-import javax.imageio.ImageReader;
-import javax.imageio.ImageTypeSpecifier;
 
 abstract class ImageData {
     protected final String inDir = "images/"; // location of images
@@ -83,5 +71,5 @@ abstract class ImageData {
     }
     
     // Will be used later
-    protected abstract void scale(/*String color*/); 
+    protected abstract void scale(String color); 
 }
