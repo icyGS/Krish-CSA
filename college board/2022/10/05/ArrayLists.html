@@ -158,6 +158,59 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Member</span><span class="p">{</span>
+    <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">grade</span><span class="p">;</span>
+    <span class="n">String</span> <span class="n">email</span><span class="p">;</span>
+
+    <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">members</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+
+    <span class="kd">public</span> <span class="nf">Member</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">grade</span><span class="p">,</span> <span class="n">String</span> <span class="n">email</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">grade</span> <span class="o">=</span> <span class="n">grade</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">email</span> <span class="o">=</span> <span class="n">email</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+        <span class="n">Member</span> <span class="n">member</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Member</span><span class="p">(</span><span class="s">"Krish"</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="s">"krishpatil1019@gmail.com"</span><span class="p">);</span>
+    
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">member</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">Member</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>REPL.$JShell$17N$Member@651217c9
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Collections</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.util.List</span><span class="p">;</span>
 
@@ -210,7 +263,7 @@ window.onload = wrap_img;
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Krish	Patil	Leadership	11	krishpatil1019@gmail.com
 Don	Tran	Leadership	11	donqt@gmail.com
-Rohan	Gaikwad	Vice President	11	donqt@gmail.com
+Rohan	Gaikwad	Vice President	11	gaikwadrohan326@gmail.com
 Audrey	Zeng	President	12	audreyhuaxia@gmail.com 
 </pre>
 </div>
