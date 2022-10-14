@@ -10,15 +10,15 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://icygs.github.io/Krish-CSA/jupyter/week%202/2022/08/25/Bash-Notebook.html" />
-<meta property="og:url" content="https://icygs.github.io/Krish-CSA/jupyter/week%202/2022/08/25/Bash-Notebook.html" />
+<link rel="canonical" href="https://icygs.github.io/Krish-CSA/jupyter/2022/08/25/Bash-Notebook.html" />
+<meta property="og:url" content="https://icygs.github.io/Krish-CSA/jupyter/2022/08/25/Bash-Notebook.html" />
 <meta property="og:site_name" content="Krish’s CSA Fastpages" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-08-25T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Bash Installation Checks" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-25T00:00:00-05:00","datePublished":"2022-08-25T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Bash Installation Checks","mainEntityOfPage":{"@type":"WebPage","@id":"https://icygs.github.io/Krish-CSA/jupyter/week%202/2022/08/25/Bash-Notebook.html"},"url":"https://icygs.github.io/Krish-CSA/jupyter/week%202/2022/08/25/Bash-Notebook.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-25T00:00:00-05:00","datePublished":"2022-08-25T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Bash Installation Checks","mainEntityOfPage":{"@type":"WebPage","@id":"https://icygs.github.io/Krish-CSA/jupyter/2022/08/25/Bash-Notebook.html"},"url":"https://icygs.github.io/Krish-CSA/jupyter/2022/08/25/Bash-Notebook.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/Krish-CSA/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://icygs.github.io/Krish-CSA/feed.xml" title="Krish's CSA Fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/Krish-CSA/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -87,9 +87,6 @@ window.onload = wrap_img;
       <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
       
         <a class="category-tags-link" href="/Krish-CSA/categories/#jupyter">jupyter</a>
-        &nbsp;
-      
-        <a class="category-tags-link" href="/Krish-CSA/categories/#week 2">week 2</a>
         
       
       </p>
@@ -155,12 +152,12 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"Lets check if Java is installed"</span>
-java --version
+<div class=" highlight hl-java"><pre><span></span><span class="n">echo</span> <span class="s">"Lets check if Java is installed"</span>
+<span class="n">java</span> <span class="o">--</span><span class="n">version</span>
 
-<span class="nb">echo</span> <span class="s2">""</span>
-<span class="nb">echo</span> <span class="s2">"Lets check if Annaconda is installed"</span>
-conda list
+<span class="n">echo</span> <span class="s">""</span>
+<span class="n">echo</span> <span class="s">"Lets check if Annaconda is installed"</span>
+<span class="n">conda</span> <span class="n">list</span>
 </pre></div>
 
     </div>
@@ -629,11 +626,11 @@ zstd                      1.4.9                h322a384_0
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">export</span> <span class="nv">repository</span><span class="o">=</span>Krish-CSA
-<span class="nb">export</span> <span class="nv">repo_main_folder</span><span class="o">=</span>vscode
-<span class="nb">cd</span> <span class="nv">$HOME</span>/<span class="nv">$repo_main_folder</span>/Krish-CSA
-git fetch origin
-git pull origin master
+<div class=" highlight hl-java"><pre><span></span><span class="n">export</span> <span class="n">repository</span><span class="o">=</span><span class="n">Krish</span><span class="o">-</span><span class="n">CSA</span>
+<span class="n">export</span> <span class="n">repo_main_folder</span><span class="o">=</span><span class="n">vscode</span>
+<span class="n">cd</span> <span class="n">$HOME</span><span class="o">/</span><span class="n">$repo_main_folder</span><span class="o">/</span><span class="n">Krish</span><span class="o">-</span><span class="n">CSA</span>
+<span class="n">git</span> <span class="n">fetch</span> <span class="n">origin</span>
+<span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="n">master</span>
 </pre></div>
 
     </div>
@@ -677,15 +674,15 @@ Already up to date.
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>arch -arm64 brew list
-arch -arm64 brew update
-arch -arm64 brew upgrade
-arch -arm64 brew install git
-arch -arm64 brew install python
-python --version
-arch -arm64 brew install java
-java --version
-javac --version
+<div class=" highlight hl-java"><pre><span></span><span class="n">arch</span> <span class="o">-</span><span class="n">arm64</span> <span class="n">brew</span> <span class="n">list</span>
+<span class="n">arch</span> <span class="o">-</span><span class="n">arm64</span> <span class="n">brew</span> <span class="n">update</span>
+<span class="n">arch</span> <span class="o">-</span><span class="n">arm64</span> <span class="n">brew</span> <span class="n">upgrade</span>
+<span class="n">arch</span> <span class="o">-</span><span class="n">arm64</span> <span class="n">brew</span> <span class="n">install</span> <span class="n">git</span>
+<span class="n">arch</span> <span class="o">-</span><span class="n">arm64</span> <span class="n">brew</span> <span class="n">install</span> <span class="n">python</span>
+<span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+<span class="n">arch</span> <span class="o">-</span><span class="n">arm64</span> <span class="n">brew</span> <span class="n">install</span> <span class="n">java</span>
+<span class="n">java</span> <span class="o">--</span><span class="n">version</span>
+<span class="n">javac</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 
     </div>
@@ -768,10 +765,10 @@ javac 17.0.4.1
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>java --version
-python --version
-javac --version
-node --version
+<div class=" highlight hl-java"><pre><span></span><span class="n">java</span> <span class="o">--</span><span class="n">version</span>
+<span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+<span class="n">javac</span> <span class="o">--</span><span class="n">version</span>
+<span class="n">node</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 
     </div>
@@ -815,7 +812,7 @@ v10.13.0
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>jupyter kernelspec list
+<div class=" highlight hl-java"><pre><span></span><span class="n">jupyter</span> <span class="n">kernelspec</span> <span class="n">list</span>
 </pre></div>
 
     </div>
@@ -856,7 +853,7 @@ v10.13.0
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/Krish-CSA/jupyter/week%202/2022/08/25/Bash-Notebook.html" hidden></a>
+</script><a class="u-url" href="/Krish-CSA/jupyter/2022/08/25/Bash-Notebook.html" hidden></a>
 </article>
 
       </div>
