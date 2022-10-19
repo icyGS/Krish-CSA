@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Sun Oct  2 11:56:55 2022
+# Make data base, printed on Wed Oct 19 14:16:43 2022
 
 # Variables
 
@@ -40,13 +40,11 @@ VSCODE_CWD = /
 # environment
 PATH = /Users/krishpatil/opt/anaconda3/bin:/Users/krishpatil/opt/anaconda3/condabin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands
 # environment
-LaunchInstanceID = 7098086C-3D11-4F67-AC4E-8E6DBA987C49
-# environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.pxsFDFXYT8/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.u0cq89xofX/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -66,7 +64,7 @@ HOME = /Users/krishpatil
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/krishpatil/Library/Application Support/Code/CachedData/74b1f979648cc44d385a2286793c226e611f59e7
+VSCODE_CODE_CACHE_PATH = /Users/krishpatil/Library/Application Support/Code/CachedData/d045a5eda657f4d7b676dedbfa7aab8207f8a075
 # environment
 LOGNAME = krishpatil
 # environment
@@ -106,7 +104,7 @@ TMPDIR = /var/folders/yn/0qsx2k3j17b061mcq5bkx2wm0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/krishpatil/Library/Application Support/Code/1.71.2-main.sock
+VSCODE_IPC_HOOK = /Users/krishpatil/Library/Application Support/Code/1.72.2-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -116,7 +114,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.65287124.65287130
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.68825635.68825642
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
@@ -137,8 +135,6 @@ MAKEFILES :=
 LC_ALL = C
 # environment
 CONDA_PYTHON_EXE = /Users/krishpatil/opt/anaconda3/bin/python
-# environment
-SECURITYSESSIONID = 186b2
 # automatic
 ^F = $(notdir $^)
 # default
@@ -150,13 +146,13 @@ MAKELEVEL := 0
 # environment
 CONDA_PREFIX = /Users/krishpatil/opt/anaconda3
 # environment
-VSCODE_PID = 578
+VSCODE_PID = 1563
 # environment
 _CE_CONDA = 
 # environment
 LANG = C
 # variable set hash-table stats:
-# Load=72/1024=7%, Rehash=0, Collisions=2/95=2%
+# Load=70/1024=7%, Rehash=0, Collisions=2/93=2%
 
 # Pattern-specific Variable Values
 
@@ -310,20 +306,20 @@ convert: .FORCE
 
 # files hash-table stats:
 # Load=16/1024=2%, Rehash=0, Collisions=0/38=0%
- 
-make: *** No rule to make target `all'.  Stop.
-
 # VPATH Search Paths
 
 # No `vpath' search paths.
 
 # No general (`VPATH' variable) search path.
 
+ 
+make: *** No rule to make target `all'.  Stop.
+
 # # of strings in strcache: 1
 # # of strcache buffers: 1
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun Oct  2 11:56:55 2022
+# Finished Make data base on Wed Oct 19 14:16:43 2022
 
  
