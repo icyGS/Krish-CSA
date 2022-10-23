@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Wed Oct 19 14:16:43 2022
+# Make data base, printed on Sat Oct 22 18:13:49 2022
 
 # Variables
 
@@ -40,11 +40,13 @@ VSCODE_CWD = /
 # environment
 PATH = /Users/krishpatil/opt/anaconda3/bin:/Users/krishpatil/opt/anaconda3/condabin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands
 # environment
+LaunchInstanceID = 005BBA6C-C19E-4070-8F77-F5D804E9076C
+# environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.u0cq89xofX/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.mGYqNom7oP/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -75,6 +77,9 @@ CONDA_PROMPT_MODIFIER = (base)
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
+ 
+make: *** No rule to make target `all'.  Stop.
+
 # environment
 CONDA_DEFAULT_ENV = base
 # environment
@@ -135,6 +140,8 @@ MAKEFILES :=
 LC_ALL = C
 # environment
 CONDA_PYTHON_EXE = /Users/krishpatil/opt/anaconda3/bin/python
+# environment
+SECURITYSESSIONID = 186b2
 # automatic
 ^F = $(notdir $^)
 # default
@@ -146,13 +153,13 @@ MAKELEVEL := 0
 # environment
 CONDA_PREFIX = /Users/krishpatil/opt/anaconda3
 # environment
-VSCODE_PID = 1563
+VSCODE_PID = 585
 # environment
 _CE_CONDA = 
 # environment
 LANG = C
 # variable set hash-table stats:
-# Load=70/1024=7%, Rehash=0, Collisions=2/93=2%
+# Load=72/1024=7%, Rehash=0, Collisions=2/95=2%
 
 # Pattern-specific Variable Values
 
@@ -312,14 +319,11 @@ convert: .FORCE
 
 # No general (`VPATH' variable) search path.
 
- 
-make: *** No rule to make target `all'.  Stop.
-
 # # of strings in strcache: 1
 # # of strcache buffers: 1
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Oct 19 14:16:43 2022
+# Finished Make data base on Sat Oct 22 18:13:49 2022
 
  
