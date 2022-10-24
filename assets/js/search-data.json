@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "Unit 4 Iteration",
+            "title": "Unit 3 FRQ's",
             "content": "2009 3b . public int getChargeStartTime(int chargeTime){ int startTime = 0; for (int i = 1; i &lt; 24; i++){ if (this.getChargingCost(i, chargeTime) &lt; this.getChargingCost(startTime, chargeTime)){ startTime = i; } } return startTime; } . 2017 1b . /** Returns true if the digits in this Digits object are in strictly increasing order; * false otherwise. */ public boolean isStrictlyIncreasing(){ for(int i = 1; i &lt; digitList.size(); i++){ if (digitList.get(i-1).compareTo(digitList.get(i)) &gt;= 0){ return false; } else{ return true; } } } . 2019 3b . public boolean isBalanced(ArrayList&lt;String&gt; delimiters) { int numOpen = 0 int numClosed = 0; for(String d:delimiters){ if(d.equals(openDel)){ numOpen++; } if(d.equals(closeDel)){ numClosed++; } } if(numOpen == numClosed){ return true; } else{ return false; } } .",
-            "url": "https://icygs.github.io/Krish-CSA/college%20board/2022/10/19/Unit-4.html",
-            "relUrl": "/college%20board/2022/10/19/Unit-4.html",
+            "url": "https://icygs.github.io/Krish-CSA/college%20board/2022/10/19/Unit-3-FRQs.html",
+            "relUrl": "/college%20board/2022/10/19/Unit-3-FRQs.html",
             "date": " • Oct 19, 2022"
         }
         
