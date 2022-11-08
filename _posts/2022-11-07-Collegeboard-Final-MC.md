@@ -54,3 +54,26 @@ For which of the following test cases will the call seqSearchRec(5) always resul
 Which of the following could be used to replace / * missing code * / so that findClosest will work as intended?
 
 - I selected `Math.abs (num - minDiff) < minDiff` but the answer was `Math.abs (num - val) < minDiff`
+- Notes: 
+  - To find the closest value to the value, you need to find the difference between the num and val rather than the num and the minDiff
+
+**Q23:** What will the contents of animals be as a result of calling manipulate?
+![]({{ site.baseurl }}/images/q23a.jpg " ")
+
+Assume that animals has been instantiated and initialized with the following contents.
+![]({{ site.baseurl }}/images/q23b.jpg " ")
+
+- I chose ["baboon", "bear", "zebra", "bass", "cat", "koala"] but the answer is ["bear", "zebra", "bass", "cat", "koala", "baboon"]
+- Notes:
+  - I forgot that the later letters than just the first letter could be "b" 
+  - Notes:
+    - Only 1 iteration of this loop would occur now
+
+**Q24:** Consider the following code segment.
+![]({{ site.baseurl }}/images/q24.jpg " ")
+What is printed as a result of executing the code segment?
+
+- I chose 5, but the answer was 7
+- Notes:
+  - I just had an error somewhere in my calculations, causing me to get 5 instead of 7
+  - The value of the newArray is 7 at (0,2)
