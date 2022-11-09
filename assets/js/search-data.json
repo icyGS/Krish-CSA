@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Trimester Review",
-            "content": "",
+            "content": "This trimester hs been a very informative one. I have learned not only the skills of a coder but the skills of a worker. I have learned how people in the work force work and the things that go into working as a team. Project based learning has been a truly valuable experience, as I have learned that success is not possible without all members of a team being part of it. The scrum board was very useful as it allowed us to organize everyone and delegate tasks. As scrum master, I was in charge of managing everyone and delegating these tasks. Deciding who got what task was hard because it was hard to equally split up the work. Apart from this, there was a lot of Java that I learned throughout my time this trimester. While I have used Python in the past, Java was a very different experience. Learning Object Oriented Programming was a challenge as it was something that I was unfamiliar with, but I was still able to do it. The rest of the concepts like arrays and iteration and whatnot were not foreign to me, it was just mainly learning the syntax and whatnot for those. I took many notes throughout the lessons by fellow students in the class to fully learn Java. . Unit 1 Unit 2 Unit 3 .",
             "url": "https://icygs.github.io/Krish-CSA/finals/2022/11/08/Trimester-Review.html",
             "relUrl": "/finals/2022/11/08/Trimester-Review.html",
             "date": " • Nov 8, 2022"
@@ -24,7 +24,7 @@
   
     
         ,"post2": {
-            "title": "Unit 4 Arrays",
+            "title": "Unit 6 Arrays",
             "content": "Declaring Arrays . Two types, arrays and ArrayLists Primitive data types contain a single var type (int, charm float) Referenced (string array classes) . Array Syntax . int[] array = new int[10]; . Common Errors . values has 10 elements but the index can only range from 0 to 9 Work like objects so must initialize . Traverse an Array . Main way is For loops where you go through each element of the array (enhanced or basic) Basic For loop is For when you know number of elements . Homework . Write a class called ArrayMethods that contains two methods that utilize/manipulate an array. You may choose 2 of the 4 options below to complete. Extra credit for doing all 4 options. Make sure to show test cases for all of the options you choose. . public class ArrayMethods { private int[] values = {0, 1, 2, 3}; public void printElements(){ for(int i = 0; i &lt; values.length; i++){ System.out.println(values[i]); } } public void swapElements(){ int last = values[values.length-1]; values[values.length-1] = values[0]; values[0] = last; } public void evenToZero(){ for(int i = 0; i &lt; values.length; i++){ if (values[i] % 2 == 0){ values[i] = 0; } } } public static void main(String[] args){ System.out.println(&quot;First and Last Element Swap: &quot;); ArrayMethods swapElements = new ArrayMethods(); swapElements.swapElements(); swapElements.printElements(); System.out.println(&quot;Replacing All Elements w/ Zero: &quot;); ArrayMethods evenToZero = new ArrayMethods(); swapElements.evenToZero(); swapElements.printElements(); } } ArrayMethods.main(null); . First and Last Element Swap: 3 1 2 0 Replacing All Elements w/ Zero: 3 1 0 0 .",
             "url": "https://icygs.github.io/Krish-CSA/final/2022/10/25/Unit-6-Arrays.html",
             "relUrl": "/final/2022/10/25/Unit-6-Arrays.html",
