@@ -11,14 +11,14 @@ html, body, input, textarea, select, button {
   color: $high-emph !important;
   background-image: linear-gradient(
         to right,
-        rgb(49, 63, 212),
-        rgb(14, 132, 87)
+        rgb(123, 61, 204),
+        rgb(225, 111, 50)
       );
 }
 
 * {
     transition-property: all;
-    transition-duration: 0.2s;
+    transition-duration: 0.15s;
     transition-timing-function: ease-in-out;
 }
 
