@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -110,7 +110,19 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h1"><a href="#Vocabulary">Vocabulary </a></li>
+<li class="toc-entry toc-h1"><a href="#Overview">Overview </a></li>
+<li class="toc-entry toc-h1"><a href="#Variables">Variables </a></li>
+<li class="toc-entry toc-h1"><a href="#Arithmetic-Operators">Arithmetic Operators </a></li>
+<li class="toc-entry toc-h1"><a href="#Compound-operators">Compound operators </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Increment-operators">Increment operators </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Casting">Casting </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Division">Division </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h1"><a href="#2006-FRQ">2006 FRQ </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#2a">2a </a></li>
@@ -129,10 +141,143 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Vocabulary">
-<a class="anchor" href="#Vocabulary" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vocabulary<a class="anchor-link" href="#Vocabulary"> </a>
+<h1 id="Overview">
+<a class="anchor" href="#Overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview<a class="anchor-link" href="#Overview"> </a>
 </h1>
-<p>-</p>
+<ul>
+<li>
+<p>Primitive data types</p>
+<ul>
+<li>ints</li>
+<li>booleans</li>
+<li>doubles</li>
+<li>chars</li>
+</ul>
+</li>
+<li>
+<p>String literals: String created when you double quote String</p>
+</li>
+<li>Literal: Something that means exactly what you define it to</li>
+<li>Errors Types:<ul>
+<li>syntax error</li>
+<li>exception</li>
+<li>logic error</li>
+</ul>
+</li>
+</ul>
+<h1 id="Variables">
+<a class="anchor" href="#Variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Variables<a class="anchor-link" href="#Variables"> </a>
+</h1>
+<ul>
+<li>defined when you put the type of variable that it is before hand and then initiate it</li>
+<li>must use camel case when naming variables</li>
+<li>example:</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">score</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Arithmetic-Operators">
+<a class="anchor" href="#Arithmetic-Operators" aria-hidden="true"><span class="octicon octicon-link"></span></a>Arithmetic Operators<a class="anchor-link" href="#Arithmetic-Operators"> </a>
+</h1>
+<ul>
+<li>There are + - * and /</li>
+<li>Represent add, subtract, multiply, and divide</li>
+<li>Integer operations result in integers</li>
+<li>Both int and double produce double</li>
+<li>only doubles produces double</li>
+<li>dividing by 0 is an arithmetic exception</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>11
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Compound-operators">
+<a class="anchor" href="#Compound-operators" aria-hidden="true"><span class="octicon octicon-link"></span></a>Compound operators<a class="anchor-link" href="#Compound-operators"> </a>
+</h1>
+<ul>
+<li>+=, -=, *=, /=, %=</li>
+<li>Changes value of variable by doing arithmetic operation with that variable</li>
+</ul>
+<h2 id="Increment-operators">
+<a class="anchor" href="#Increment-operators" aria-hidden="true"><span class="octicon octicon-link"></span></a>Increment operators<a class="anchor-link" href="#Increment-operators"> </a>
+</h2>
+<ul>
+<li>++ or -- which either go up 1 or go down 1<ul>
+<li>useful for for loops</li>
+</ul>
+</li>
+</ul>
+<h1 id="Casting">
+<a class="anchor" href="#Casting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Casting<a class="anchor-link" href="#Casting"> </a>
+</h1>
+<ul>
+<li>Treating a variable as another type of variable</li>
+<li>Operators: (int) or (double)</li>
+</ul>
+<h2 id="Division">
+<a class="anchor" href="#Division" aria-hidden="true"><span class="octicon octicon-link"></span></a>Division<a class="anchor-link" href="#Division"> </a>
+</h2>
+<ul>
+<li>Two integers become 1 integer</li>
+<li>A double and an integer become a double</li>
+</ul>
 
 </div>
 </div>
