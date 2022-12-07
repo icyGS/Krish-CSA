@@ -230,9 +230,40 @@ window.onload = wrap_img;
 <span class="p">}</span>
 
 <span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">Collections</span><span class="p">.</span><span class="na">reverseOrder</span><span class="p">());</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Reverse: "</span><span class="p">);</span>
+<span class="n">print</span><span class="p">(</span><span class="n">countries</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"----------"</span><span class="p">);</span>
+
+<span class="n">String</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">countries</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">countries</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">countries</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">countries</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+<span class="n">countries</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">countries</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">tmp</span><span class="p">);</span>
+<span class="n">print</span><span class="p">(</span><span class="n">countries</span><span class="p">);</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Reverse: 
+USA
+Russia
+France
+China
+----------
+China
+Russia
+France
+USA
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
