@@ -1,7 +1,9 @@
 {
     "makefile.extensionOutputFolder": "./.vscode",
     "cSpell.words": [
+        "Collegeboard",
         "Krish",
-        "nums"
+        "nums",
+        "Postcondition"
     ]
 }
