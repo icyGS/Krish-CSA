@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Mon Dec 12 21:05:20 2022
+# Make data base, printed on Tue Dec 13 08:45:42 2022
 
 # Variables
 
@@ -43,8 +43,6 @@ VSCODE_CWD = /
 # environment
 PATH = /Users/krishpatil/opt/anaconda3/bin:/Users/krishpatil/opt/anaconda3/condabin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands
 # environment
-LaunchInstanceID = 40474527-8076-462E-B14D-22BCD3D91A70
-# environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
@@ -69,7 +67,7 @@ HOME = /Users/krishpatil
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/krishpatil/Library/Application Support/Code/CachedData/6261075646f055b99068d3688932416f2346dd3b
+VSCODE_CODE_CACHE_PATH = /Users/krishpatil/Library/Application Support/Code/CachedData/5235c6bb189b60b01b1f49062f4ffa42384f8c91
 # environment
 LOGNAME = krishpatil
 # environment
@@ -109,7 +107,7 @@ TMPDIR = /var/folders/yn/0qsx2k3j17b061mcq5bkx2wm0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/krishpatil/Library/Application Support/Code/1.73.1-main.sock
+VSCODE_IPC_HOOK = /Users/krishpatil/Library/Application Support/Code/1.74.0-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -119,7 +117,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.72027202.72027208
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.75665863.75665869
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
@@ -140,8 +138,6 @@ MAKEFILES :=
 LC_ALL = C
 # environment
 CONDA_PYTHON_EXE = /Users/krishpatil/opt/anaconda3/bin/python
-# environment
-SECURITYSESSIONID = 186b2
 # automatic
 ^F = $(notdir $^)
 # default
@@ -153,13 +149,13 @@ MAKELEVEL := 0
 # environment
 CONDA_PREFIX = /Users/krishpatil/opt/anaconda3
 # environment
-VSCODE_PID = 634
+VSCODE_PID = 8056
 # environment
 _CE_CONDA = 
 # environment
 LANG = C
 # variable set hash-table stats:
-# Load=72/1024=7%, Rehash=0, Collisions=2/95=2%
+# Load=70/1024=7%, Rehash=0, Collisions=2/93=2%
 
 # Pattern-specific Variable Values
 
@@ -322,9 +318,8 @@ convert: .FORCE
 # # of strings in strcache: 1
 # # of strcache buffers: 1
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
- 
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Dec 12 21:05:20 2022
+# Finished Make data base on Tue Dec 13 08:45:42 2022
 
  
