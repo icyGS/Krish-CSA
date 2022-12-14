@@ -59,3 +59,6 @@ title: Comp Sci Technical Business Panel
 - Analytics Infrastructure projects
 - Twitter projects
 - New DataCenter deployment
+
+# Takeaways
+The tech industry is very large and has many different components to every company. If everyone in the company just codes, there's no way that the company can actually function because there has to be someone who's managing these people and actually telling them what is needed.This panel also gave me insight on how dreams can actually be a reality. These companies all around have so many people working to make the future a better place. It also made me realize that whatever I do should be for the good of the people because both of the speakers today only worked at companies that benefitted the people. It show's that high tech is a really good field because it directly impacts people in their daily lives and without it, we would not be where we are today and our lives would be very different. This panel gave me insight on how the real world really operates and it shows that our CS class is actually very representative of how companies operate because of the many organizational strategies we use.
