@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Tue Dec 13 08:45:42 2022
+# Make data base, printed on Sat Jan 21 23:14:56 2023
 
 # Variables
 
@@ -67,7 +67,7 @@ HOME = /Users/krishpatil
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/krishpatil/Library/Application Support/Code/CachedData/5235c6bb189b60b01b1f49062f4ffa42384f8c91
+VSCODE_CODE_CACHE_PATH = /Users/krishpatil/Library/Application Support/Code/CachedData/97dec172d3256f8ca4bfb2143f3f76b503ca0534
 # environment
 LOGNAME = krishpatil
 # environment
@@ -107,7 +107,7 @@ TMPDIR = /var/folders/yn/0qsx2k3j17b061mcq5bkx2wm0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/krishpatil/Library/Application Support/Code/1.74.0-main.sock
+VSCODE_IPC_HOOK = /Users/krishpatil/Library/Application Support/Code/1.74.3-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -117,7 +117,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.75665863.75665869
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.79589812.79589818
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
@@ -149,7 +149,7 @@ MAKELEVEL := 0
 # environment
 CONDA_PREFIX = /Users/krishpatil/opt/anaconda3
 # environment
-VSCODE_PID = 8056
+VSCODE_PID = 28587
 # environment
 _CE_CONDA = 
 # environment
@@ -320,6 +320,6 @@ convert: .FORCE
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Dec 13 08:45:42 2022
+# Finished Make data base on Sat Jan 21 23:14:56 2023
 
  
