@@ -4,7 +4,7 @@ layout: post
 description: Collegeboard MC
 comments: false
 categories: [college board]
-title: 66 Question Multiple Choice Practice
+title: 52 Question Multiple Choice Practice
 ---
 ![]({{ site.baseurl }}/images/52QMC.png "MC results")
 
