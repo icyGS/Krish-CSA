@@ -9,7 +9,7 @@ title: 52 Question Multiple Choice Practice
 ![]({{ site.baseurl }}/images/52QMC.png "MC results")
 
 # What I learned
-- Overall got a 44/56 on the mc
+- Overall got a 44/52 on the mc
 - Topics I got wrong:
   - 2.A: Apply the meaning of specific operators.
   - 2.B: Determine the result or output based on statement execution order in a code segment without method calls (other than output).
