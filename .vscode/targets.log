@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Tue Jan 31 08:36:25 2023
+# Make data base, printed on Mon Mar  6 08:58:00 2023
 
 # Variables
 
@@ -15,6 +15,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
+# environment
+VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -44,7 +46,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.otr6H6xDNl/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.A0R3TAykWM/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -64,7 +66,7 @@ HOME = /Users/krishpatil
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/krishpatil/Library/Application Support/Code/CachedData/97dec172d3256f8ca4bfb2143f3f76b503ca0534
+VSCODE_CODE_CACHE_PATH = /Users/krishpatil/Library/Application Support/Code/CachedData/92da9481c0904c6adfe372c12da3b7748d74bdcb
 # environment
 LOGNAME = krishpatil
 # environment
@@ -104,7 +106,7 @@ TMPDIR = /var/folders/yn/0qsx2k3j17b061mcq5bkx2wm0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/krishpatil/Library/Application Support/Code/1.74.3-main.sock
+VSCODE_IPC_HOOK = /Users/krishpatil/Library/Application Support/Code/1.76-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -114,11 +116,13 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.79589812.79589818
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.85506886.85506892
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
+# environment
+VSCODE_L10N_BUNDLE_LOCATION = 
 # automatic
 +F = $(notdir $+)
 # environment
@@ -140,15 +144,11 @@ CONDA_PYTHON_EXE = /Users/krishpatil/opt/anaconda3/bin/python
 # default
 SUFFIXES := 
 # environment
-_CE_M = 
-# environment
 MAKELEVEL := 0
 # environment
 CONDA_PREFIX = /Users/krishpatil/opt/anaconda3
 # environment
-VSCODE_PID = 28587
-# environment
-_CE_CONDA = 
+VSCODE_PID = 72297
 # environment
 LANG = C
 # variable set hash-table stats:
@@ -160,7 +160,7 @@ LANG = C
 
 # Directories
 
-# . (device 16777231, inode 60955513): 36 files, no impossibilities.
+# . (device 16777230, inode 60955513): 36 files, no impossibilities.
 
 # 36 files, no impossibilities in 1 directories.
 
@@ -298,6 +298,9 @@ convert: .FORCE
 
 .FORCE:
 #  Implicit rule search has not been done.
+ 
+make: *** No rule to make target `all'.  Stop.
+
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 53):
@@ -312,14 +315,11 @@ convert: .FORCE
 
 # No general (`VPATH' variable) search path.
 
- 
-make: *** No rule to make target `all'.  Stop.
-
 # # of strings in strcache: 1
 # # of strcache buffers: 1
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Jan 31 08:36:25 2023
+# Finished Make data base on Mon Mar  6 08:58:00 2023
 
  
