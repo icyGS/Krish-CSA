@@ -143,49 +143,32 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BinaryAddition</span> <span class="p">{</span>
-   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
-	<span class="c1">//Two variables to hold two input binary numbers	 </span>
-	<span class="kt">long</span> <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">;</span>
-	<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">carry</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-	<span class="c1">//This is to hold the output binary number</span>
-	<span class="kt">int</span><span class="o">[]</span> <span class="n">sum</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">10</span><span class="o">]</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BinaryAdding</span> <span class="p">{</span>
 
-	<span class="c1">//To read the input binary numbers entered by user</span>
-	<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+	<span class="kd">private</span> <span class="kd">static</span> <span class="n">Scanner</span> <span class="n">scanner</span><span class="p">;</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
 
-	<span class="c1">//getting first binary number from user</span>
-	<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Enter first binary number "</span><span class="p">);</span>
-	<span class="n">b1</span> <span class="o">=</span> <span class="n">scanner</span><span class="p">.</span><span class="na">nextLong</span><span class="p">();</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b1</span><span class="p">);</span>
-	<span class="c1">//getting second binary number from user</span>
-	<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Enter second binary number "</span><span class="p">);</span>
-	<span class="n">b2</span> <span class="o">=</span> <span class="n">scanner</span><span class="p">.</span><span class="na">nextLong</span><span class="p">();</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b2</span><span class="p">);</span>
-
-	<span class="c1">//closing scanner after use to avoid memory leak</span>
-	<span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-	<span class="k">while</span> <span class="p">(</span><span class="n">b1</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">b2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> 
-	<span class="p">{</span>
-		<span class="n">sum</span><span class="o">[</span><span class="n">i</span><span class="o">++]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)((</span><span class="n">b1</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">b2</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">carry</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span><span class="p">);</span>
-		<span class="n">carry</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)((</span><span class="n">b1</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">b2</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">carry</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
-		<span class="n">b1</span> <span class="o">=</span> <span class="n">b1</span> <span class="o">/</span> <span class="mi">10</span><span class="p">;</span>
-		<span class="n">b2</span> <span class="o">=</span> <span class="n">b2</span> <span class="o">/</span> <span class="mi">10</span><span class="p">;</span>
+		<span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+		
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Enter The First and Second Numbers = "</span><span class="p">);</span>	
+		<span class="n">String</span> <span class="n">b1</span> <span class="o">=</span> <span class="n">scanner</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b1</span><span class="p">);</span>
+		<span class="n">String</span> <span class="n">b2</span> <span class="o">=</span> <span class="n">scanner</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">b2</span><span class="p">);</span>
+		
+		<span class="kt">int</span> <span class="n">num1</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">b1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+		<span class="kt">int</span> <span class="n">num2</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">b2</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+		
+		<span class="kt">int</span> <span class="n">output</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="p">;</span>
+		
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"\nThe Sum = "</span><span class="p">);</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">Integer</span><span class="p">.</span><span class="na">toBinaryString</span><span class="p">(</span><span class="n">output</span><span class="p">));</span>
 	<span class="p">}</span>
-	<span class="k">if</span> <span class="p">(</span><span class="n">carry</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-		<span class="n">sum</span><span class="o">[</span><span class="n">i</span><span class="o">++]</span> <span class="o">=</span> <span class="n">carry</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="o">--</span><span class="n">i</span><span class="p">;</span>
-	<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Output: "</span><span class="p">);</span>
-	<span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">sum</span><span class="o">[</span><span class="n">i</span><span class="o">--]</span><span class="p">);</span>
-	<span class="p">}</span>
-	<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n"</span><span class="p">);</span>  
-   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="n">BinaryAddition</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="n">BinaryAdding</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -198,14 +181,11 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Enter first binary number 
+<pre>Enter The First and Second Numbers = 
 1
-Enter second binary number 
-2
-Output: 
-11
+1
 
-</pre>
+The Sum = 10</pre>
 </div>
 </div>
 
