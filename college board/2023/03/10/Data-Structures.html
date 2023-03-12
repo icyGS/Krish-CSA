@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Data Structures | Krish’s CSA Fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Data Structures" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://icygs.github.io/Krish-CSA/college%20board/2023/03/10/Data-Structures.html" />
+<meta property="og:url" content="https://icygs.github.io/Krish-CSA/college%20board/2023/03/10/Data-Structures.html" />
+<meta property="og:site_name" content="Krish’s CSA Fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-03-10T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Data Structures" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-10T00:00:00-06:00","datePublished":"2023-03-10T00:00:00-06:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Data Structures","mainEntityOfPage":{"@type":"WebPage","@id":"https://icygs.github.io/Krish-CSA/college%20board/2023/03/10/Data-Structures.html"},"url":"https://icygs.github.io/Krish-CSA/college%20board/2023/03/10/Data-Structures.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/Krish-CSA/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://icygs.github.io/Krish-CSA/feed.xml" title="Krish's CSA Fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/Krish-CSA/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/Krish-CSA/">Krish&#39;s CSA Fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/Krish-CSA/about/">About Me</a><a class="page-link" href="/Krish-CSA/notes/">Notes</a><a class="page-link" href="/Krish-CSA/search/">Search</a><a class="page-link" href="/Krish-CSA/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Data Structures</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-03-10T00:00:00-06:00" itemprop="datePublished">
+        Mar 10, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/Krish-CSA/categories/#college board">college board</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/icyGS/Krish-CSA/tree/master/_notebooks/2023-03-10-Data-Structures.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/Krish-CSA/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          
+          
+          
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Methods-and-Control-Structures">Methods and Control Structures </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Methods">Methods </a></li>
+<li class="toc-entry toc-h3"><a href="#Control-Structures">Control Structures </a></li>
+<li class="toc-entry toc-h2"><a href="#APCSA-FRQ-2017-Methods-and-Control-Structures">APCSA FRQ 2017 Methods and Control Structures </a></li>
+<li class="toc-entry toc-h2"><a href="#Exploring-teacher-code">Exploring teacher code </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Diverse-Array">Diverse Array </a></li>
+<li class="toc-entry toc-h3"><a href="#Matric">Matric </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Random">Random </a></li>
+<li class="toc-entry toc-h2"><a href="#Do-nothing-by-value">Do nothing by value </a></li>
+<li class="toc-entry toc-h2"><a href="#Int-by-Reference">Int by Reference </a></li>
+<li class="toc-entry toc-h2"><a href="#Menu">Menu </a></li>
+<li class="toc-entry toc-h2"><a href="#Method-and-Control-structures">Method and Control structures </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-03-10-Data-Structures.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Methods-and-Control-Structures">
+<a class="anchor" href="#Methods-and-Control-Structures" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods and Control Structures<a class="anchor-link" href="#Methods-and-Control-Structures"> </a>
+</h1>
+<h3 id="Methods">
+<a class="anchor" href="#Methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods<a class="anchor-link" href="#Methods"> </a>
+</h3>
+<ul>
+<li>A method in Java is a block of code that, when called, performs specific actions mentioned in it. </li>
+<li>For instance, if you have written instructions to draw a circle in the method, it will do that task. </li>
+<li>You can insert values or parameters into methods, and they will only be executed when called.</li>
+<li>A method is similar to a function in other programming languages such as python </li>
+</ul>
+<h3 id="Control-Structures">
+<a class="anchor" href="#Control-Structures" aria-hidden="true"><span class="octicon octicon-link"></span></a>Control Structures<a class="anchor-link" href="#Control-Structures"> </a>
+</h3>
+<ul>
+<li>Control Structures can be considered as the building blocks of computer programs. </li>
+<li>They are commands that enable a program to “take decisions”, following one path or another. </li>
+<li>A program is usually not limited to a linear sequence of instructions since during its process it may bifurcate, repeat code or bypass sections.</li>
+</ul>
+<h2 id="APCSA-FRQ-2017-Methods-and-Control-Structures">
+<a class="anchor" href="#APCSA-FRQ-2017-Methods-and-Control-Structures" aria-hidden="true"><span class="octicon octicon-link"></span></a>APCSA FRQ 2017 Methods and Control Structures<a class="anchor-link" href="#APCSA-FRQ-2017-Methods-and-Control-Structures"> </a>
+</h2>
+<ul>
+<li><a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-a-frq-2017.pdf">https://apcentral.collegeboard.org/media/pdf/ap-computer-science-a-frq-2017.pdf</a></li>
+</ul>
+<h2 id="Exploring-teacher-code">
+<a class="anchor" href="#Exploring-teacher-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exploring teacher code<a class="anchor-link" href="#Exploring-teacher-code"> </a>
+</h2>
+<h3 id="Diverse-Array">
+<a class="anchor" href="#Diverse-Array" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://github.com/nighthawkcoders/spring_portfolio/blob/master/src/main/java/com/nighthawk/hacks/methodsDataTypes/DiverseArray.java">Diverse Array</a><a class="anchor-link" href="#Diverse-Array"> </a>
+</h3>
+<h3 id="Matric">
+<a class="anchor" href="#Matric" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://github.com/nighthawkcoders/spring_portfolio/blob/master/src/main/java/com/nighthawk/hacks/methodsDataTypes/Matrix.java">Matric</a><a class="anchor-link" href="#Matric"> </a>
+</h3>
+<ul>
+<li>Contains methods and control structures</li>
+<li>Multiple methods that allow stuff to happen</li>
+<li>
+<p>Multiple control structures</p>
+<ul>
+<li>Loops<ul>
+<li>For</li>
+<li>While</li>
+</ul>
+</li>
+<li>If statements</li>
+</ul>
+</li>
+<li>
+<p>Fits within data types because contains arrays which is a data type</p>
+</li>
+<li>
+<p>Takeaway: most code segments no matter what they are on have to do with methods and control structures</p>
+</li>
+</ul>
+<h2 id="Random">
+<a class="anchor" href="#Random" aria-hidden="true"><span class="octicon octicon-link"></span></a>Random<a class="anchor-link" href="#Random"> </a>
+</h2>
+<ul>
+<li>Math.random</li>
+<li>Gives value between 0 and 1 </li>
+<li>To get a random value between 7 and 9, double a  Math.random value and add 7 to it</li>
+</ul>
+<h2 id="Do-nothing-by-value">
+<a class="anchor" href="#Do-nothing-by-value" aria-hidden="true"><span class="octicon octicon-link"></span></a>Do nothing by value<a class="anchor-link" href="#Do-nothing-by-value"> </a>
+</h2>
+<ul>
+<li>You're basically changing a variable but the variable doesn't actually change because it is changing the subvalue and not the actual value</li>
+<li>Changing a variable only happens at a large scale<ul>
+<li>Can't do it locally</li>
+</ul>
+</li>
+</ul>
+<h2 id="Int-by-Reference">
+<a class="anchor" href="#Int-by-Reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>Int by Reference<a class="anchor-link" href="#Int-by-Reference"> </a>
+</h2>
+<ul>
+<li>The int changes its value even though you are doing it locally</li>
+<li>Basically says theres a way to get around the fact that you cant edit variables locally</li>
+</ul>
+<h2 id="Menu">
+<a class="anchor" href="#Menu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Menu<a class="anchor-link" href="#Menu"> </a>
+</h2>
+<ul>
+<li>Try, Catch, Runnable are used to control program execution</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">package</span> <span class="nn">com.nighthawk.hacks.methodsDataTypes</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Menu: custom implementation</span>
+<span class="cm"> * @author     John Mortensen</span>
+<span class="cm"> *</span>
+<span class="cm"> * Uses String to contain Title for an Option</span>
+<span class="cm"> * Uses Runnable to store Class-Method to be run when Title is selected</span>
+<span class="cm"> */</span>
+
+<span class="c1">// The Menu Class has a HashMap of Menu Rows</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Menu</span> <span class="p">{</span>
+    <span class="c1">// Format</span>
+    <span class="c1">// Key {0, 1, 2, ...} created based on order of input menu</span>
+    <span class="c1">// Value {MenuRow0, MenuRow1, MenuRow2,...} each corresponds to key</span>
+    <span class="c1">// MenuRow  {&lt;Exit,Noop&gt;, Option1, Option2, ...}</span>
+    <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">MenuRow</span><span class="o">&gt;</span> <span class="n">menu</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  Constructor for Menu,</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param  rows,  is the row data for menu.</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="nf">Menu</span><span class="p">(</span><span class="n">MenuRow</span><span class="o">[]</span> <span class="n">rows</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">MenuRow</span> <span class="n">row</span> <span class="p">:</span> <span class="n">rows</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Build HashMap for lookup convenience</span>
+            <span class="n">menu</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">i</span><span class="o">++</span><span class="p">,</span> <span class="k">new</span> <span class="n">MenuRow</span><span class="p">(</span><span class="n">row</span><span class="p">.</span><span class="na">getTitle</span><span class="p">(),</span> <span class="n">row</span><span class="p">.</span><span class="na">getAction</span><span class="p">()));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  Get Row from Menu,</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param  i,  HashMap key (k)</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return  MenuRow, the selected menu</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">MenuRow</span> <span class="nf">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">menu</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  Iterate through and print rows in HashMap</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">MenuRow</span><span class="o">&gt;</span> <span class="n">pair</span> <span class="p">:</span> <span class="n">menu</span><span class="p">.</span><span class="na">entrySet</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pair</span><span class="p">.</span><span class="na">getKey</span><span class="p">()</span> <span class="o">+</span> <span class="s">" ==&gt; "</span> <span class="o">+</span> <span class="n">pair</span><span class="p">.</span><span class="na">getValue</span><span class="p">().</span><span class="na">getTitle</span><span class="p">());</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  To test run Driver</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Driver</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="c1">// The MenuRow Class has title and action for individual line item in menu</span>
+<span class="kd">class</span> <span class="nc">MenuRow</span> <span class="p">{</span>
+    <span class="n">String</span> <span class="n">title</span><span class="p">;</span>       <span class="c1">// menu item title</span>
+    <span class="n">Runnable</span> <span class="n">action</span><span class="p">;</span>    <span class="c1">// menu item action, using Runnable</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  Constructor for MenuRow,</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param  title,  is the description of the menu item</span>
+<span class="cm">     * @param  action, is the run-able action for the menu item</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="nf">MenuRow</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">,</span> <span class="n">Runnable</span> <span class="n">action</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">action</span> <span class="o">=</span> <span class="n">action</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  Getters</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getTitle</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">title</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="n">Runnable</span> <span class="nf">getAction</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">action</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  Runs the action using Runnable (.run)</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">action</span><span class="p">.</span><span class="na">run</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// The Main Class illustrates initializing and using Menu with Runnable action</span>
+<span class="kd">class</span> <span class="nc">Driver</span> <span class="p">{</span>
+    <span class="cm">/**</span>
+<span class="cm">     *  Menu Control Example</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Row initialize</span>
+        <span class="n">MenuRow</span><span class="o">[]</span> <span class="n">rows</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MenuRow</span><span class="o">[]</span><span class="p">{</span>
+            <span class="c1">// lambda style, () -&gt; to point to Class.Method</span>
+            <span class="k">new</span> <span class="n">MenuRow</span><span class="p">(</span><span class="s">"Exit"</span><span class="p">,</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)),</span>
+            <span class="k">new</span> <span class="n">MenuRow</span><span class="p">(</span><span class="s">"Do Nothing"</span><span class="p">,</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">DoNothingByValue</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)),</span>
+            <span class="k">new</span> <span class="n">MenuRow</span><span class="p">(</span><span class="s">"Swap if Hi-Low"</span><span class="p">,</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">IntByReference</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)),</span>
+            <span class="k">new</span> <span class="n">MenuRow</span><span class="p">(</span><span class="s">"Matrix Reverse"</span><span class="p">,</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Matrix</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)),</span>
+            <span class="k">new</span> <span class="n">MenuRow</span><span class="p">(</span><span class="s">"Diverse Array"</span><span class="p">,</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Matrix</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)),</span>
+            <span class="k">new</span> <span class="n">MenuRow</span><span class="p">(</span><span class="s">"Random Squirrels"</span><span class="p">,</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">))</span>
+        <span class="p">};</span>
+
+        <span class="c1">// Menu construction</span>
+        <span class="n">Menu</span> <span class="n">menu</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Menu</span><span class="p">(</span><span class="n">rows</span><span class="p">);</span>
+
+        <span class="c1">// Run menu forever, exit condition contained in loop</span>
+        <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Hacks Menu:"</span><span class="p">);</span>
+            <span class="c1">// print rows</span>
+            <span class="n">menu</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+            <span class="c1">// Scan for input</span>
+            <span class="k">try</span> <span class="p">{</span>
+                <span class="n">Scanner</span> <span class="n">scan</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+                <span class="kt">int</span> <span class="n">selection</span> <span class="o">=</span> <span class="n">scan</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+                <span class="c1">// menu action</span>
+                <span class="k">try</span> <span class="p">{</span>
+                    <span class="n">MenuRow</span> <span class="n">row</span> <span class="o">=</span> <span class="n">menu</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">selection</span><span class="p">);</span>
+                    <span class="c1">// stop menu</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">row</span><span class="p">.</span><span class="na">getTitle</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="s">"Exit"</span><span class="p">))</span> <span class="p">{</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">scan</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> 
+                            <span class="n">scan</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>  <span class="c1">// scanner resource requires release</span>
+                        <span class="k">return</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="c1">// run option</span>
+                    <span class="n">row</span><span class="p">.</span><span class="na">run</span><span class="p">();</span>
+                <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"Invalid selection %d\n"</span><span class="p">,</span> <span class="n">selection</span><span class="p">);</span>
+                <span class="p">}</span>
+
+            <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Not a number"</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Method-and-Control-structures">
+<a class="anchor" href="#Method-and-Control-structures" aria-hidden="true"><span class="octicon octicon-link"></span></a>Method and Control structures<a class="anchor-link" href="#Method-and-Control-structures"> </a>
+</h2>
+<ul>
+<li>There are three kinds of control structures:
+Conditional Branches, which we use for choosing between two or more paths. There are three types in Java: if/else/else if, ternary operator and switch. Loops that are used to iterate through multiple values/objects and repeatedly run specific code blocks.</li>
+<li>MenuRow and Runnable are data types and also control structures</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="icyGS/Krish-CSA"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/Krish-CSA/college%20board/2023/03/10/Data-Structures.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/Krish-CSA/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://icygs.github.io/Krish-CSA/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/Krish-CSA/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
