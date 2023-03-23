@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -420,7 +420,8 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="cm">/**</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.*</span><span class="p">;</span>
+<span class="cm">/**</span>
 <span class="cm"> * Driver Class</span>
 <span class="cm"> * Tests queue with string, integers, and mixes of Classes and types</span>
 <span class="cm"> */</span>
@@ -428,45 +429,66 @@ window.onload = wrap_img;
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="c1">// Create iterable Queue of Words</span>
-        <span class="n">Object</span><span class="o">[]</span> <span class="n">words</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="p">{</span> <span class="s">"seven"</span><span class="p">,</span> <span class="s">"slimy"</span><span class="p">,</span> <span class="s">"snakes"</span><span class="p">,</span> <span class="s">"sallying"</span><span class="p">,</span> <span class="s">"slowly"</span><span class="p">,</span> <span class="s">"slithered"</span><span class="p">,</span> <span class="s">"southward"</span><span class="p">};</span>
-        <span class="n">QueueManager</span> <span class="n">qWords</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManager</span><span class="p">(</span><span class="s">"Words"</span><span class="p">,</span> <span class="n">words</span> <span class="p">);</span>
-        <span class="n">qWords</span><span class="p">.</span><span class="na">printQueue</span><span class="p">();</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">words</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="p">{</span> <span class="s">"seven"</span><span class="p">,</span> <span class="s">"slimy"</span><span class="p">,</span> <span class="s">"snakes"</span><span class="p">,</span> <span class="s">"sallying"</span><span class="p">,</span> <span class="s">"slowly"</span><span class="p">,</span> <span class="s">"slithered"</span><span class="p">,</span> <span class="s">"southward"</span><span class="p">};</span>
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">word</span><span class="p">:</span> <span class="n">words</span><span class="p">){</span>
+            <span class="n">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">word</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Engueued Data: "</span><span class="o">+</span> <span class="n">word</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
+        <span class="p">}</span>
 
-        <span class="c1">// Create iterable Queue of Integers</span>
-        <span class="n">Object</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">};</span>
-        <span class="n">QueueManager</span> <span class="n">qNums</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManager</span><span class="p">(</span><span class="s">"Integers"</span><span class="p">,</span> <span class="n">numbers</span> <span class="p">);</span>
-        <span class="n">qNums</span><span class="p">.</span><span class="na">printQueue</span><span class="p">();</span>
-
-        <span class="c1">// Create iterable Queue of NCS Generics</span>
-        <span class="n">Animal</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">Animal</span><span class="p">.</span><span class="na">KeyType</span><span class="p">.</span><span class="na">name</span><span class="p">);</span>
-        <span class="n">Alphabet</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">Alphabet</span><span class="p">.</span><span class="na">KeyType</span><span class="p">.</span><span class="na">letter</span><span class="p">);</span>
-        <span class="n">Cupcake</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">Cupcake</span><span class="p">.</span><span class="na">KeyType</span><span class="p">.</span><span class="na">flavor</span><span class="p">);</span>
-        <span class="c1">// Illustrates use of a series of repeating arguments</span>
-        <span class="n">QueueManager</span> <span class="n">qGenerics</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManager</span><span class="p">(</span><span class="s">"My Generics"</span><span class="p">,</span>
-                <span class="n">Alphabet</span><span class="p">.</span><span class="na">alphabetData</span><span class="p">(),</span>
-                <span class="n">Animal</span><span class="p">.</span><span class="na">animals</span><span class="p">(),</span>
-                <span class="n">Cupcake</span><span class="p">.</span><span class="na">cupcakes</span><span class="p">()</span>
-        <span class="p">);</span>
-        <span class="n">qGenerics</span><span class="p">.</span><span class="na">printQueue</span><span class="p">();</span>
-
-        <span class="c1">// Create iterable Queue of Mixed types of data</span>
-        <span class="n">QueueManager</span> <span class="n">qMix</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManager</span><span class="p">(</span><span class="s">"Mixed"</span><span class="p">);</span>
-        <span class="n">qMix</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Start"</span><span class="p">);</span>
-        <span class="n">qMix</span><span class="p">.</span><span class="na">addList</span><span class="p">(</span>
-                <span class="n">words</span><span class="p">,</span>
-                <span class="n">numbers</span><span class="p">,</span>
-                <span class="n">Alphabet</span><span class="p">.</span><span class="na">alphabetData</span><span class="p">(),</span>
-                <span class="n">Animal</span><span class="p">.</span><span class="na">animals</span><span class="p">(),</span>
-                <span class="n">Cupcake</span><span class="p">.</span><span class="na">cupcakes</span><span class="p">()</span>
-        <span class="p">);</span>
-        <span class="n">qMix</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"End"</span><span class="p">);</span>
-        <span class="n">qMix</span><span class="p">.</span><span class="na">printQueue</span><span class="p">();</span>
+        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">queue</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())){</span>
+            <span class="n">String</span> <span class="n">del</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dequeued Data: "</span> <span class="o">+</span> <span class="n">del</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="n">QueueTester</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Engueued Data: seven
+Words count: 1, data: seven 
+Engueued Data: slimy
+Words count: 2, data: seven slimy 
+Engueued Data: snakes
+Words count: 3, data: seven slimy snakes 
+Engueued Data: sallying
+Words count: 4, data: seven slimy snakes sallying 
+Engueued Data: slowly
+Words count: 5, data: seven slimy snakes sallying slowly 
+Engueued Data: slithered
+Words count: 6, data: seven slimy snakes sallying slowly slithered 
+Engueued Data: southward
+Words count: 7, data: seven slimy snakes sallying slowly slithered southward 
+Dequeued Data: seven
+Words count: 6, data: slimy snakes sallying slowly slithered southward 
+Dequeued Data: slimy
+Words count: 5, data: snakes sallying slowly slithered southward 
+Dequeued Data: snakes
+Words count: 4, data: sallying slowly slithered southward 
+Dequeued Data: sallying
+Words count: 3, data: slowly slithered southward 
+Dequeued Data: slowly
+Words count: 2, data: slithered southward 
+Dequeued Data: slithered
+Words count: 1, data: southward 
+Dequeued Data: southward
+Words count: 0, data: 
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
