@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      6 min read
     
 </span></p>
 
@@ -115,6 +115,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#Hacks">Hacks </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Challenge-#1:">Challenge #1: </a></li>
+<li class="toc-entry toc-h3"><a href="#Challenge-2:">Challenge 2: </a></li>
 </ul>
 </li>
 </ul><!--
@@ -410,6 +411,10 @@ window.onload = wrap_img;
 <h3 id="Challenge-#1:">
 <a class="anchor" href="#Challenge-#1:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge #1:<a class="anchor-link" href="#Challenge-#1:"> </a>
 </h3>
+<ul>
+<li>Add and Delete elements from Queue. Working with the code that is given, you will need to adjust Add and write Delete, to output from the Queue as follows.</li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -485,6 +490,91 @@ Dequeued Data: slithered
 Words count: 1, data: southward 
 Dequeued Data: southward
 Words count: 0, data: 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Challenge-2:">
+<a class="anchor" href="#Challenge-2:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge 2:<a class="anchor-link" href="#Challenge-2:"> </a>
+</h3>
+<ul>
+<li>perform a merge or combination of 2 Queue's that are ordered. This is a foundation step for the algorithm used in Merge sorting. IMO, this algorithm is easier if you "peek" at data at the head of the queue, prior to performing dequeue action.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">QueueTester2</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">};</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">set2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
+
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">Q1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">:</span> <span class="n">set1</span><span class="p">){</span>
+            <span class="n">Q1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">Q2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">:</span> <span class="n">set1</span><span class="p">){</span>
+            <span class="n">Q1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"1st Queue"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Q1</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"2nd Queue: "</span> <span class="o">+</span> <span class="n">Q2</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Q2</span><span class="p">);</span>
+
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">Q3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">Q1</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">Q2</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())){</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">Q1</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span>
+                <span class="n">Q3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Q2</span><span class="p">.</span><span class="na">delete</span><span class="p">());</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">Q2</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span>
+                <span class="n">Q3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Q1</span><span class="p">.</span><span class="na">delete</span><span class="p">());</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="n">Q3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Q2</span><span class="p">.</span><span class="na">delete</span><span class="p">());</span>
+
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"New Queue"</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Q3</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">QueueTester2</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1st Queue
+Words count: 8, data: 1 4 5 8 1 4 5 8 
+2nd Queue: Words count: 0, data: 
+Words count: 0, data: 
+New Queue
+Words count: 8, data: 1 4 5 8 1 4 5 8 
 </pre>
 </div>
 </div>
