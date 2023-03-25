@@ -623,7 +623,7 @@ Words count: 8, data: 1 4 5 8 1 4 5 8
         <span class="p">}</span>
         
         <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">newQ</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span>
-            <span class="kt">int</span> <span class="n">rand</span> <span class="o">=</span> <span class="kt">int</span> <span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="n">newQ</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
+            <span class="kt">int</span> <span class="n">rand</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="n">newQ</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
             <span class="n">Q</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">newQ</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rand</span><span class="p">));</span>
             <span class="n">newQ</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">rand</span><span class="p">);</span>
         <span class="p">}</span>
@@ -634,28 +634,6 @@ Words count: 8, data: 1 4 5 8 1 4 5 8
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            int rand = int </span><span class="ansi-black-intense-fg ansi-bold">(Math.random() * newQ.size());</span>
-<span class="ansi-red-intense-fg ansi-bold">'.class' expected</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            int rand = int (</span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">Math.random() * newQ.size()</span><span class="ansi-black-intense-fg ansi-bold">);</span>
-<span class="ansi-red-intense-fg ansi-bold">not a statement</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            int rand = int (Math.random() * newQ.size()</span><span class="ansi-black-intense-fg ansi-bold">);</span>
-<span class="ansi-red-intense-fg ansi-bold">';' expected</span>
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
