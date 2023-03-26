@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      7 min read
     
 </span></p>
 
@@ -117,6 +117,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#Challenge-#1:">Challenge #1: </a></li>
 <li class="toc-entry toc-h3"><a href="#Challenge-2:">Challenge 2: </a></li>
 <li class="toc-entry toc-h3"><a href="#Challenge-3:">Challenge 3: </a></li>
+<li class="toc-entry toc-h3"><a href="#Challenge-4:">Challenge 4: </a></li>
 </ul>
 </li>
 </ul><!--
@@ -437,15 +438,18 @@ window.onload = wrap_img;
         <span class="c1">// Create iterable Queue of Words</span>
         <span class="n">String</span><span class="o">[]</span> <span class="n">words</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="p">{</span> <span class="s">"seven"</span><span class="p">,</span> <span class="s">"slimy"</span><span class="p">,</span> <span class="s">"snakes"</span><span class="p">,</span> <span class="s">"sallying"</span><span class="p">,</span> <span class="s">"slowly"</span><span class="p">,</span> <span class="s">"slithered"</span><span class="p">,</span> <span class="s">"southward"</span><span class="p">};</span>
         <span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+        <span class="c1">// Enqueuing all words </span>
         <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">word</span><span class="p">:</span> <span class="n">words</span><span class="p">){</span>
             <span class="n">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">word</span><span class="p">);</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Engueued Data: "</span><span class="o">+</span> <span class="n">word</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Enqueued data: "</span><span class="o">+</span> <span class="n">word</span><span class="p">);</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
         <span class="p">}</span>
 
+        <span class="c1">// Dequeuing all words </span>
         <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">queue</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())){</span>
             <span class="n">String</span> <span class="n">del</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dequeued Data: "</span> <span class="o">+</span> <span class="n">del</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dequeued data: "</span> <span class="o">+</span> <span class="n">del</span><span class="p">);</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
@@ -521,8 +525,14 @@ Words count: 0, data:
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">QueueTester2</span><span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+<div class=" highlight hl-java"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Driver Class</span>
+<span class="cm"> * Tests queue with string, integers, and mixes of Classes and types</span>
+<span class="cm"> */</span>
+<span class="kd">class</span> <span class="nc">QueueTester2</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// initializing two queues of ints</span>
         <span class="kt">int</span><span class="o">[]</span> <span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">};</span>
         <span class="kt">int</span><span class="o">[]</span> <span class="n">set2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
 
@@ -531,28 +541,37 @@ Words count: 0, data:
             <span class="n">Q1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
         <span class="p">}</span>
         <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">Q2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">:</span> <span class="n">set1</span><span class="p">){</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">:</span> <span class="n">set2</span><span class="p">){</span>
             <span class="n">Q1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
         <span class="p">}</span>
 
+        <span class="c1">// printing queues individually </span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"1st Queue"</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Q1</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"2nd Queue: "</span> <span class="o">+</span> <span class="n">Q2</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"2nd Queue"</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Q2</span><span class="p">);</span>
 
+        <span class="c1">//initializing new queue for queues to order into one another</span>
         <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">Q3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
         <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">Q1</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">Q2</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())){</span>
+            <span class="c1">// checking if first queue is empty</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">Q1</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span>
                 <span class="n">Q3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Q2</span><span class="p">.</span><span class="na">delete</span><span class="p">());</span>
             <span class="p">}</span>
+            <span class="c1">//checking if second queue is empty</span>
             <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">Q2</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span>
                 <span class="n">Q3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Q1</span><span class="p">.</span><span class="na">delete</span><span class="p">());</span>
+            <span class="p">}</span>
+            <span class="c1">// checking if the first Q1 val is greater than the first Q2 val</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">Q1</span><span class="p">.</span><span class="na">peek</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">Q2</span><span class="p">.</span><span class="na">peek</span><span class="p">()){</span>
+                <span class="n">Q3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Q1</span><span class="p">.</span><span class="na">delete</span><span class="p">)</span>
             <span class="p">}</span>
             <span class="k">else</span> <span class="p">{</span>
                 <span class="n">Q3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Q2</span><span class="p">.</span><span class="na">delete</span><span class="p">());</span>
 
             <span class="p">}</span>
         <span class="p">}</span>
+        <span class="c1">// printing new queue</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"New Queue"</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Q3</span><span class="p">);</span>
     <span class="p">}</span>
@@ -571,11 +590,11 @@ Words count: 0, data:
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>1st Queue
-Words count: 8, data: 1 4 5 8 1 4 5 8 
-2nd Queue: Words count: 0, data: 
+Words count: 8, data: 1 4 5 8 2 3 6 7 
+2nd Queue
 Words count: 0, data: 
 New Queue
-Words count: 8, data: 1 4 5 8 1 4 5 8 
+Words count: 8, data: 1 4 5 8 2 3 6 7 
 </pre>
 </div>
 </div>
@@ -606,41 +625,97 @@ Words count: 8, data: 1 4 5 8 1 4 5 8
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">QueueTester3</span><span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
-        <span class="kt">int</span><span class="o">[]</span> <span class="n">set</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">};</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">ShuffleQ</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">shuffle</span><span class="p">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">//initializing a new queue</span>
+      <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">newQ</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">newQ</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">Q</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">:</span> <span class="n">set</span><span class="p">){</span>
-            <span class="n">Q</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-        <span class="p">}</span>
-        
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Sorted queue"</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Q</span><span class="p">);</span>
+      <span class="c1">// Add all elements to newQ   </span>
+      <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">newQ</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="na">delete</span><span class="p">());</span>
+      <span class="p">}</span>
 
-        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">Q</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())){</span>
-            <span class="n">newQ</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Q</span><span class="p">.</span><span class="na">delete</span><span class="p">());</span>
-        <span class="p">}</span>
-        
-        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">newQ</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span>
-            <span class="kt">int</span> <span class="n">rand</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="n">newQ</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
-            <span class="n">Q</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">newQ</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rand</span><span class="p">));</span>
-            <span class="n">newQ</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">rand</span><span class="p">);</span>
-        <span class="p">}</span>
-
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Q</span><span class="p">);</span>
-    <span class="p">}</span>
+      <span class="c1">// Add elements back to q in random order</span>
+      <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">newQ</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+        <span class="c1">// Get random index</span>
+        <span class="kt">int</span> <span class="n">rand</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="n">newQ</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
+        <span class="n">q</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">newQ</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rand</span><span class="p">));</span>
+        <span class="c1">// Remove element from the new queue</span>
+        <span class="n">newQ</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">rand</span><span class="p">);</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
 <span class="p">}</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Driver Class</span>
+<span class="cm"> * Tests queue with string, integers, and mixes of Classes and types</span>
+<span class="cm"> */</span>
+
+<span class="kd">class</span> <span class="nc">QueueTester3</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+      
+      <span class="c1">// Create first queue</span>
+      <span class="kt">int</span><span class="o">[]</span> <span class="n">set</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">};</span>
+      <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">Q</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span> <span class="p">:</span> <span class="n">set</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Q</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Sorted Queue: "</span><span class="p">);</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Q</span><span class="p">);</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+      <span class="c1">// Shuffle queue using shuffleQ</span>
+  
+      <span class="n">ShuffleQ</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">shuffleQ</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ShuffleQ</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+      <span class="n">shuffleQ</span><span class="p">.</span><span class="na">shuffle</span><span class="p">(</span><span class="n">Q</span><span class="p">);</span>
+      
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Shuffled Queue: "</span><span class="p">);</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Q</span><span class="p">);</span>
+  
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">QueueTester3</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Sorted Queue: 
+Words count: 8, data: 1 2 3 4 5 6 7 8 
+
+Scrambled Queue: 
+Words count: 8, data: 7 2 3 1 5 6 8 4 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Challenge-4:">
+<a class="anchor" href="#Challenge-4:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge 4:<a class="anchor-link" href="#Challenge-4:"> </a>
+</h3>
+<ul>
+<li>Build a Stack and use it to reverse the order of a Queue. The Queue is a LIFO Data Structure, the Stack is a FIFO data structure, so code is similar but most everything is reversed.</li>
+</ul>
+
+</div>
+</div>
+</div>
 </div>
 
 
