@@ -542,7 +542,7 @@ Words count: 0, data:
         <span class="p">}</span>
         <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">Q2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">:</span> <span class="n">set2</span><span class="p">){</span>
-            <span class="n">Q1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+            <span class="n">Q2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
         <span class="p">}</span>
 
         <span class="c1">// printing queues individually </span>
@@ -553,7 +553,7 @@ Words count: 0, data:
 
         <span class="c1">//initializing new queue for queues to order into one another</span>
         <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">Q3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">Q1</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">Q2</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())){</span>
+        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">Q1</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> <span class="o">||</span> <span class="o">!</span><span class="p">(</span><span class="n">Q2</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())){</span>
             <span class="c1">// checking if first queue is empty</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">Q1</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span>
                 <span class="n">Q3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Q2</span><span class="p">.</span><span class="na">delete</span><span class="p">());</span>
@@ -564,7 +564,7 @@ Words count: 0, data:
             <span class="p">}</span>
             <span class="c1">// checking if the first Q1 val is greater than the first Q2 val</span>
             <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">Q1</span><span class="p">.</span><span class="na">peek</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">Q2</span><span class="p">.</span><span class="na">peek</span><span class="p">()){</span>
-                <span class="n">Q3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Q1</span><span class="p">.</span><span class="na">delete</span><span class="p">)</span>
+                <span class="n">Q3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Q1</span><span class="p">.</span><span class="na">delete</span><span class="p">());</span>
             <span class="p">}</span>
             <span class="k">else</span> <span class="p">{</span>
                 <span class="n">Q3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Q2</span><span class="p">.</span><span class="na">delete</span><span class="p">());</span>
@@ -590,11 +590,11 @@ Words count: 0, data:
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>1st Queue
-Words count: 8, data: 1 4 5 8 2 3 6 7 
+Words count: 4, data: 1 4 5 8 
 2nd Queue
-Words count: 0, data: 
+Words count: 4, data: 2 3 6 7 
 New Queue
-Words count: 8, data: 1 4 5 8 2 3 6 7 
+Words count: 8, data: 1 2 3 4 5 6 7 8 
 </pre>
 </div>
 </div>
