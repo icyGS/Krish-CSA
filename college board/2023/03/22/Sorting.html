@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      24 min read
+      25 min read
     
 </span></p>
 
@@ -113,6 +113,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#Bubble-Sort">Bubble Sort </a></li>
 <li class="toc-entry toc-h1"><a href="#Selection-Sort">Selection Sort </a></li>
 <li class="toc-entry toc-h1"><a href="#Insertion-Sort">Insertion Sort </a></li>
+<li class="toc-entry toc-h1"><a href="#Merge-Sort">Merge Sort </a></li>
 <li class="toc-entry toc-h1"><a href="#Big-O-analysis">Big O analysis </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Conclusion">Conclusion </a></li>
@@ -371,27 +372,13 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Big-O-analysis">
-<a class="anchor" href="#Big-O-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Big O analysis<a class="anchor-link" href="#Big-O-analysis"> </a>
+<h1 id="Merge-Sort">
+<a class="anchor" href="#Merge-Sort" aria-hidden="true"><span class="octicon octicon-link"></span></a>Merge Sort<a class="anchor-link" href="#Merge-Sort"> </a>
 </h1>
 <ul>
-<li>Fastest is merge sort</li>
-<li>2nd fastest is selection sort</li>
-<li>3rd fastest is insertion sort</li>
-<li>4th fastest is bubble sort</li>
-</ul>
-<h3 id="Conclusion">
-<a class="anchor" href="#Conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion<a class="anchor-link" href="#Conclusion"> </a>
-</h3>
-<ul>
-<li>The fastest algorithm is merge sort<ul>
-<li>Makes sense as it has list O(n*log(n)) time complexity</li>
-</ul>
-</li>
-<li>Slowest is bubble sort<ul>
-<li>Has list O(n^2) time complexity making it inefficient in comparison</li>
-</ul>
-</li>
+<li>Splits array in half over and over again until the values can be compared </li>
+<li>Then swaps if needed</li>
+<li>O(n*log(n))</li>
 </ul>
 
 </div>
@@ -467,7 +454,7 @@ window.onload = wrap_img;
         <span class="n">mergeSort</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="n">list</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
 
         <span class="c1">// End of Merge Sorting algorithm</span>
-        <span class="c1">// Printing the sorted listay</span>
+        <span class="c1">// Printing the sorted list</span>
 
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Sorted:"</span><span class="p">);</span>
         <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
@@ -493,6 +480,28 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Big-O-analysis">
+<a class="anchor" href="#Big-O-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Big O analysis<a class="anchor-link" href="#Big-O-analysis"> </a>
+</h1>
+<ul>
+<li>Fastest is merge sort</li>
+<li>2nd fastest is selection sort</li>
+<li>3rd fastest is insertion sort</li>
+<li>4th fastest is bubble sort</li>
+</ul>
+<h3 id="Conclusion">
+<a class="anchor" href="#Conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion<a class="anchor-link" href="#Conclusion"> </a>
+</h3>
+<ul>
+<li>The fastest algorithm is merge sort<ul>
+<li>Makes sense as it has list O(n*log(n)) time complexity</li>
+</ul>
+</li>
+<li>Slowest is bubble sort<ul>
+<li>Has list O(n^2) time complexity making it inefficient in comparison</li>
+</ul>
+</li>
+</ul>
 <h1 id="Sorting">
 <a class="anchor" href="#Sorting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sorting<a class="anchor-link" href="#Sorting"> </a>
 </h1>
@@ -507,6 +516,7 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SortLists</span><span class="p">{</span>
+    <span class="c1">// initializing the list of 5000 elements</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">createList</span><span class="p">()</span> <span class="p">{</span>
         <span class="kt">int</span><span class="o">[]</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5000</span><span class="o">]</span><span class="p">;</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -515,6 +525,7 @@ window.onload = wrap_img;
         <span class="k">return</span> <span class="n">list</span><span class="p">;</span>
     <span class="p">}</span>
 
+    <span class="c1">// bubble sorting algorithm</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">list</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">list</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -527,6 +538,7 @@ window.onload = wrap_img;
         <span class="p">}</span>
     <span class="p">}</span>
 
+    <span class="c1">// selection sorting algorithm</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">selectionSort</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">list</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
             <span class="kt">int</span> <span class="n">minIndex</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
@@ -541,6 +553,7 @@ window.onload = wrap_img;
         <span class="p">}</span>
     <span class="p">}</span>
 
+    <span class="c1">// insertion sorting algorithm</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">insertionSort</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">list</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
             <span class="kt">int</span> <span class="n">current</span> <span class="o">=</span> <span class="n">list</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
@@ -553,6 +566,7 @@ window.onload = wrap_img;
         <span class="p">}</span>
     <span class="p">}</span>
     
+    <span class="c1">// merge sorting algorithm</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mergeSort</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">list</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
             <span class="kt">int</span><span class="o">[]</span> <span class="n">left</span> <span class="o">=</span> <span class="n">leftHalf</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
@@ -597,9 +611,12 @@ window.onload = wrap_img;
         <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
     <span class="p">}</span>
 
+    <span class="c1">// tester method to test the sorting algorithms</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+        <span class="c1">// initializing the array of 5000 elements</span>
         <span class="kt">int</span><span class="o">[]</span> <span class="n">list</span> <span class="o">=</span> <span class="n">createList</span><span class="p">();</span>
 
+        <span class="c1">// bubble sort runtimes check</span>
         <span class="kt">long</span> <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
         <span class="n">bubbleSort</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
         <span class="kt">long</span> <span class="n">endTime</span>   <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
@@ -608,6 +625,7 @@ window.onload = wrap_img;
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">totalTime</span> <span class="o">+</span> <span class="s">" nanoseconds"</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">" "</span><span class="p">);</span>
 
+        <span class="c1">// insertion sort runtimes check</span>
         <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
         <span class="n">insertionSort</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
         <span class="n">endTime</span>   <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
@@ -616,6 +634,7 @@ window.onload = wrap_img;
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">totalTime</span> <span class="o">+</span> <span class="s">" nanoseconds"</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">" "</span><span class="p">);</span>
 
+        <span class="c1">// selection sort runtimes check</span>
         <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
         <span class="n">selectionSort</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
         <span class="n">endTime</span>   <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
@@ -624,6 +643,7 @@ window.onload = wrap_img;
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">totalTime</span> <span class="o">+</span> <span class="s">" nanoseconds"</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">" "</span><span class="p">);</span>
 
+        <span class="c1">// merge sort runtimes check</span>
         <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
         <span class="n">mergeSort</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
         <span class="n">endTime</span>   <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
