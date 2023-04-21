@@ -139,35 +139,46 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Book</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Book</span><span class="o">&gt;</span> <span class="n">library</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Book</span><span class="o">&gt;</span><span class="p">();</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">title</span><span class="p">;</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
     <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">shelfLife</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kt">long</span> <span class="n">time</span><span class="p">;</span>
 
     <span class="kd">public</span> <span class="nf">Book</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">id</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="kd">var</span> <span class="err">= </span><span class="n">count</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">count</span><span class="p">;</span>
         <span class="n">Book</span><span class="p">.</span><span class="na">count</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">startTime</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">startTime</span><span class="p">(){</span>
+        <span class="n">time</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
     <span class="p">}</span>
 
     <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">title</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getShelfLife</span><span class="p">(){</span>
-        <span class="k">return</span> <span class="n">shelfLife</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span class="c1">// public int getShelfLife(){</span>
+    <span class="c1">//     return shelfLife;</span>
+    <span class="c1">// }</span>
     
-
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">Book</span> <span class="n">book1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Book</span><span class="p">(</span><span class="s">"Percy Jackson"</span><span class="p">);</span>
-        <span class="n">Book</span> <span class="n">book2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Book</span><span class="p">(</span><span class="s">"Harry Potter"</span><span class="p">);</span>
-        <span class="n">Book</span> <span class="n">book3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Book</span><span class="p">(</span><span class="s">"Harry Potter 2"</span><span class="p">);</span>
+        <span class="n">Book</span><span class="o">[]</span> <span class="n">books</span> <span class="o">=</span> <span class="p">{</span>    <span class="c1">// Use Array iniitialization to add book</span>
+            <span class="k">new</span> <span class="n">Book</span><span class="p">(</span><span class="s">"Barron's Computer Science \"A\""</span><span class="p">),</span>  <span class="c1">// Set a new Book object as array element.</span>
+            <span class="k">new</span> <span class="n">Book</span><span class="p">(</span><span class="s">"Angels and Demons"</span><span class="p">),</span>
+            <span class="k">new</span> <span class="n">Book</span><span class="p">(</span><span class="s">"Lion, Witch, and a Wardrobe"</span><span class="p">)</span>
+        <span class="p">};</span>
 
+        <span class="k">for</span> <span class="p">(</span><span class="n">Book</span> <span class="n">book</span> <span class="p">:</span> <span class="n">books</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// Use Foreach syntax to iterate over array</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">book</span><span class="p">);</span>   <span class="c1">// this is same as book.toString()</span>
+        <span class="p">}</span>
 
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">book1</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">book2</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Book count: "</span> <span class="o">+</span> <span class="n">Book</span><span class="p">.</span><span class="na">count</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">books</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">time</span><span class="p">);</span>
+
     <span class="p">}</span>
     
 <span class="p">}</span>
@@ -184,9 +195,11 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Percy Jackson
-Harry Potter
+<pre>Barron's Computer Science "A"
+Angels and Demons
+Lion, Witch, and a Wardrobe
 Book count: 3
+94410850826416
 </pre>
 </div>
 </div>
@@ -205,47 +218,98 @@ Book count: 3
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Novel</span> <span class="kd">extends</span> <span class="n">Book</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">Author</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">author</span><span class="p">;</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">numCheckouts</span><span class="p">;</span>
     
-    <span class="n">Novel</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">,</span> <span class="n">String</span> <span class="n">Author</span><span class="p">){</span>
+    <span class="kd">public</span> <span class="nf">Novel</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">,</span> <span class="n">String</span> <span class="n">author</span><span class="p">){</span>
         <span class="kd">super</span><span class="p">(</span><span class="n">title</span><span class="p">);</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">Author</span> <span class="o">=</span> <span class="n">Author</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">author</span><span class="p">;</span>
+        <span class="n">startTime</span><span class="p">();</span>
+
     <span class="p">}</span>
 
     <span class="kd">public</span> <span class="n">String</span> <span class="nf">getAuthor</span><span class="p">(){</span>
-        <span class="k">return</span> <span class="n">Author</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">author</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAuthor</span><span class="p">(</span><span class="n">String</span> <span class="n">Author</span><span class="p">){</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">Author</span> <span class="o">=</span> <span class="n">Author</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAuthor</span><span class="p">(</span><span class="n">String</span> <span class="n">author</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">author</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">setShelfLife</span><span class="p">(){</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">numCheckouts</span><span class="p">)</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="kd">super</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s">" written by "</span> <span class="o">+</span> <span class="n">author</span><span class="p">;</span>
     <span class="p">}</span>
-    
+
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+        <span class="n">Novel</span><span class="o">[]</span> <span class="n">novels</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="k">new</span> <span class="n">Novel</span><span class="p">(</span><span class="s">"The Great Gatsby"</span><span class="p">,</span> <span class="s">"F. Scott Fitzgerald"</span><span class="p">),</span>
+            <span class="k">new</span> <span class="n">Novel</span><span class="p">(</span><span class="s">"Harry Potter"</span><span class="p">,</span> <span class="s">"J.K. Rowling"</span><span class="p">),</span>
+            <span class="k">new</span> <span class="n">Novel</span><span class="p">(</span><span class="s">"Everything Everything"</span><span class="p">,</span> <span class="s">"Nicola Yoon"</span><span class="p">)</span>
+        <span class="p">};</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">Novel</span> <span class="n">novel</span> <span class="p">:</span> <span class="n">novels</span><span class="p">){</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">novel</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">novels</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">time</span><span class="p">);</span>
+
+    <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Textbook</span> <span class="kd">extends</span> <span class="n">Book</span> <span class="p">{</span> 
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">publishingCompany</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">pubCompany</span><span class="p">;</span>
 
-    <span class="n">Novel</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">,</span> <span class="n">String</span> <span class="n">publishingCompany</span><span class="p">){</span>
+    <span class="kd">public</span> <span class="nf">Textbook</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">,</span> <span class="n">String</span> <span class="n">pubCompany</span><span class="p">){</span>
         <span class="kd">super</span><span class="p">(</span><span class="n">title</span><span class="p">);</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">publishingCompany</span> <span class="o">=</span> <span class="n">publishingCompany</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">pubCompany</span> <span class="o">=</span> <span class="n">pubCompany</span><span class="p">;</span>
+        <span class="n">startTime</span><span class="p">();</span>
     <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getPublishingCompany</span><span class="p">(){</span>
-        <span class="k">return</span> <span class="n">publishingCompany</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getPubCompany</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="n">pubCompany</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">setPublishingCompany</span> <span class="p">(</span><span class="n">String</span> <span class="n">publishingCompany</span><span class="p">){</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">publishingCompany</span> <span class="o">=</span> <span class="n">publishingCompany</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setPubCompany</span> <span class="p">(</span><span class="n">String</span> <span class="n">pubCompany</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">pubCompany</span> <span class="o">=</span> <span class="n">pubCompany</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+        <span class="n">Textbook</span><span class="o">[]</span> <span class="n">textbook</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="k">new</span> <span class="n">Textbook</span><span class="p">(</span><span class="s">"The Great Gatsby"</span><span class="p">,</span> <span class="s">"F. Scott Fitzgerald"</span><span class="p">),</span>
+            <span class="k">new</span> <span class="n">Textbook</span><span class="p">(</span><span class="s">"Harry Potter"</span><span class="p">,</span> <span class="s">"J.K. Rowling"</span><span class="p">),</span>
+            <span class="k">new</span> <span class="n">Textbook</span><span class="p">(</span><span class="s">"Everything Everything"</span><span class="p">,</span> <span class="s">"Nicola Yoon"</span><span class="p">)</span>
+        <span class="p">};</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">Textbook</span> <span class="n">textbook</span> <span class="p">:</span> <span class="n">textbook</span><span class="p">){</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">textbook</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">textbook</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">time</span><span class="p">);</span>
+
     <span class="p">}</span>
 <span class="p">}</span>
+
+<span class="n">Novel</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        for (</span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">Textbook textbook</span><span class="ansi-black-intense-fg ansi-bold"> : textbook){</span>
+<span class="ansi-red-intense-fg ansi-bold">variable textbook is already defined in method main(java.lang.String[])</span>
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
