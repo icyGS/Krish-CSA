@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -319,25 +319,30 @@ Checking if 1593 is valid: false
     <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">inGoodStanding</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">hasGoodStanding</span><span class="p">;</span>
     <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">gradYear</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">hasGoodStanding</span><span class="p">);</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ClubMembers</span> <span class="p">{</span> 
-    <span class="kd">private</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">MemberInfo</span><span class="o">&gt;</span> <span class="n">memberList</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">MemberInfo</span><span class="o">&gt;</span> <span class="n">memberList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">MemberInfo</span><span class="o">&gt;</span><span class="p">();</span>
 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addMembers</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">names</span><span class="p">,</span> <span class="kt">int</span> <span class="n">gradYear</span><span class="p">){</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">addMembers</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">names</span><span class="p">,</span> <span class="kt">int</span> <span class="n">gradYear</span><span class="p">){</span>
         <span class="k">for</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">:</span> <span class="n">names</span><span class="p">){</span>
             <span class="n">memberList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">MemberInfo</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">gradYear</span><span class="p">,</span> <span class="kc">true</span><span class="p">));</span>
         <span class="p">}</span>
     <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">MemberInfo</span><span class="o">&gt;</span> <span class="nf">removeMembers</span><span class="p">(</span><span class="kt">int</span> <span class="n">year</span><span class="p">){</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">MemberInfo</span><span class="o">&gt;</span> <span class="nf">removeMembers</span><span class="p">(</span><span class="kt">int</span> <span class="n">year</span><span class="p">){</span>
         <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">MemberInfo</span><span class="o">&gt;</span> <span class="n">goodStanding</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">MemberInfo</span><span class="o">&gt;</span><span class="p">();</span>
 
         <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
         <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">memberList</span><span class="p">.</span><span class="na">size</span><span class="p">()){</span>
             <span class="k">if</span><span class="p">(</span><span class="n">memberList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">getGradYear</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">year</span><span class="p">){</span>
-                <span class="n">MemberInfo</span> <span class="n">removedMember</span> <span class="o">=</span> <span class="n">memberList</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-                <span class="k">if</span><span class="p">(</span><span class="n">removedMember</span><span class="p">.</span><span class="na">inGoodStanding</span><span class="p">){</span>
+                <span class="n">MemberInfo</span> <span class="n">removedMember</span> <span class="o">=</span> <span class="n">memberList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+                <span class="n">memberList</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">removedMember</span><span class="p">.</span><span class="na">inGoodStanding</span><span class="p">()){</span>
                     <span class="n">goodStanding</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">removedMember</span><span class="p">);</span>
                 <span class="p">}</span>
             <span class="p">}</span>
@@ -347,8 +352,20 @@ Checking if 1593 is valid: false
     <span class="p">}</span>
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
-        <span class="n">String</span><span class="o">[]</span> <span class="n">names</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span><span class="p">{</span><span class="s">"John"</span><span class="p">,</span> <span class="s">"Jeff"</span><span class="p">,</span> <span class="s">"Joseph"</span><span class="p">};</span>
-        <span class="n">ClubMembers</span><span class="p">.</span><span class="na">addMembers</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="mi">2019</span><span class="p">);</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">names1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span><span class="p">{</span><span class="s">"John"</span><span class="p">,</span> <span class="s">"Jeff"</span><span class="p">,</span> <span class="s">"Joseph"</span><span class="p">};</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">names2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span><span class="p">{</span><span class="s">"Galileo"</span><span class="p">,</span> <span class="s">"Newton"</span><span class="p">,</span> <span class="s">"Isaac"</span><span class="p">,</span> <span class="s">"Archimedes"</span><span class="p">};</span>
+
+        <span class="n">ClubMembers</span><span class="p">.</span><span class="na">addMembers</span><span class="p">(</span><span class="n">names1</span><span class="p">,</span> <span class="mi">2019</span><span class="p">);</span>
+        <span class="n">ClubMembers</span><span class="p">.</span><span class="na">addMembers</span><span class="p">(</span><span class="n">names2</span><span class="p">,</span> <span class="mi">2015</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Members list: "</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ClubMembers</span><span class="p">.</span><span class="na">memberList</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Good Standing Graduates: "</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ClubMembers</span><span class="p">.</span><span class="na">removeMembers</span><span class="p">(</span><span class="mi">2015</span><span class="p">));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Current Members after 2015: "</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ClubMembers</span><span class="p">.</span><span class="na">memberList</span><span class="p">);</span>
     <span class="p">}</span>
 
 <span class="p">}</span>
@@ -364,14 +381,15 @@ Checking if 1593 is valid: false
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">                if(</span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">removedMember.inGoodStanding</span><span class="ansi-black-intense-fg ansi-bold">){</span>
-<span class="ansi-red-intense-fg ansi-bold">cannot find symbol</span>
-<span class="ansi-red-intense-fg ansi-bold">  symbol:   variable inGoodStanding</span>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Members list: 
+[John 2019 true, Jeff 2019 true, Joseph 2019 true, Galileo 2015 true, Newton 2015 true, Isaac 2015 true, Archimedes 2015 true]
 
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">ClubMembers.addMembers</span><span class="ansi-black-intense-fg ansi-bold">(names, 2019);</span>
-<span class="ansi-red-intense-fg ansi-bold">non-static method addMembers(java.lang.String[],int) cannot be referenced from a static context</span>
+Good Standing Graduates: 
+[Galileo 2015 true, Newton 2015 true, Isaac 2015 true, Archimedes 2015 true]
+
+Current Members after 2015: 
+[John 2019 true, Jeff 2019 true, Joseph 2019 true]
 </pre>
 </div>
 </div>
