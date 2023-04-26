@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -143,7 +143,7 @@ window.onload = wrap_img;
     <span class="kd">private</span> <span class="n">String</span> <span class="n">title</span><span class="p">;</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
     <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
-    <span class="kd">public</span> <span class="kt">long</span> <span class="n">time</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">long</span> <span class="n">time</span><span class="p">;</span>
 
     <span class="kd">public</span> <span class="nf">Book</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">;</span>
@@ -157,8 +157,12 @@ window.onload = wrap_img;
         <span class="n">time</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
     <span class="p">}</span>
 
+    <span class="kd">public</span> <span class="kt">long</span> <span class="nf">shelfLife</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">()</span> <span class="o">-</span> <span class="n">time</span><span class="p">);</span>
+    <span class="p">}</span>
+
     <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">title</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">id</span> <span class="o">+</span> <span class="s">". "</span> <span class="o">+</span> <span class="n">title</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="c1">// public int getShelfLife(){</span>
@@ -174,10 +178,12 @@ window.onload = wrap_img;
 
         <span class="k">for</span> <span class="p">(</span><span class="n">Book</span> <span class="n">book</span> <span class="p">:</span> <span class="n">books</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// Use Foreach syntax to iterate over array</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">book</span><span class="p">);</span>   <span class="c1">// this is same as book.toString()</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Shelf Life"</span> <span class="o">+</span> <span class="n">book</span><span class="p">.</span><span class="na">shelfLife</span><span class="p">());</span>
         <span class="p">}</span>
 
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Book count: "</span> <span class="o">+</span> <span class="n">Book</span><span class="p">.</span><span class="na">count</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">books</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">time</span><span class="p">);</span>
+        <span class="c1">// System.out.println(books[0].time);</span>
+        <span class="c1">// System.out.println("Shelf Life" + books[0].shelfLife());</span>
 
     <span class="p">}</span>
     
@@ -195,11 +201,13 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Barron's Computer Science "A"
-Angels and Demons
-Lion, Witch, and a Wardrobe
+<pre>0. Barron's Computer Science "A"
+Shelf Life1355208
+1. Angels and Demons
+Shelf Life2916292
+2. Lion, Witch, and a Wardrobe
+Shelf Life3405458
 Book count: 3
-94410850826416
 </pre>
 </div>
 </div>
@@ -250,9 +258,11 @@ Book count: 3
 
         <span class="k">for</span> <span class="p">(</span><span class="n">Novel</span> <span class="n">novel</span> <span class="p">:</span> <span class="n">novels</span><span class="p">){</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">novel</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Shelf Life: "</span> <span class="o">+</span> <span class="n">novel</span><span class="p">.</span><span class="na">shelfLife</span><span class="p">());</span>
         <span class="p">}</span>
 
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">novels</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">time</span><span class="p">);</span>
+        <span class="c1">// System.out.println(novels[0].time);</span>
+        <span class="c1">// System.out.println("Shelf Life: " + novels[0].shelfLife());</span>
 
     <span class="p">}</span>
 <span class="p">}</span>
@@ -283,9 +293,11 @@ Book count: 3
 
         <span class="k">for</span> <span class="p">(</span><span class="n">Textbook</span> <span class="n">textbook</span> <span class="p">:</span> <span class="n">textbooks</span><span class="p">){</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">textbook</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Shelf Life: "</span> <span class="o">+</span> <span class="n">textbook</span><span class="p">.</span><span class="na">shelfLife</span><span class="p">());</span>
         <span class="p">}</span>
 
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">textbooks</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">time</span><span class="p">);</span>
+        <span class="c1">// System.out.println(textbooks[0].time);</span>
+        <span class="c1">// System.out.println("Shelf Life: " + textbooks[].shelfLife());</span>
 
     <span class="p">}</span>
 <span class="p">}</span>
@@ -304,14 +316,18 @@ Book count: 3
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The Great Gatsby written by F. Scott Fitzgerald
-Harry Potter written by J.K. Rowling
-Everything Everything written by Nicola Yoon
-94668043744458
-The Great Gatsby
-Harry Potter
-Everything Everything
-94668053019625
+<pre>3. The Great Gatsby written by F. Scott Fitzgerald
+Shelf Life: 776667
+4. Harry Potter written by J.K. Rowling
+Shelf Life: 1440000
+5. Everything Everything written by Nicola Yoon
+Shelf Life: 1910834
+6. The Great Gatsby
+Shelf Life: 490166
+7. Harry Potter
+Shelf Life: 1095833
+8. Everything Everything
+Shelf Life: 1472250
 </pre>
 </div>
 </div>
