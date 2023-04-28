@@ -231,23 +231,25 @@ Checking if 1593 is valid: false
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AdditionalPattern</span> <span class="p">{</span> 
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">start</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">current</span><span class="p">;</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">increment</span><span class="p">;</span>
 
     <span class="kd">public</span> <span class="nf">AdditionalPattern</span><span class="p">(</span><span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">increment</span><span class="p">){</span>
         <span class="k">this</span><span class="p">.</span><span class="na">start</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>
         <span class="k">this</span><span class="p">.</span><span class="na">increment</span> <span class="o">=</span> <span class="n">increment</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">current</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">currentNumber</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">start</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">current</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">next</span><span class="p">()</span> <span class="p">{</span> 
-        <span class="n">start</span> <span class="o">+=</span> <span class="n">increment</span><span class="p">;</span>
+        <span class="n">current</span> <span class="o">+=</span> <span class="n">increment</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">prev</span><span class="p">()</span> <span class="p">{</span> 
-        <span class="n">start</span> <span class="o">-=</span> <span class="n">increment</span><span class="p">;</span>
+        <span class="n">current</span> <span class="o">-=</span> <span class="n">increment</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
@@ -516,6 +518,8 @@ Number of non-zero rows: 2
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeAbsentStudents</span><span class="p">()</span>
 <span class="p">}</span>
 </pre></div>
 
