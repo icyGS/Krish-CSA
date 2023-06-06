@@ -14,7 +14,7 @@
     
         ,"post1": {
             "title": "Javascript Checkout",
-            "content": "&lt;!DOCTYPE html&gt; . . Name Age Country . John | 25 | USA | . Emily | 30 | Canada | . David | 22 | UK | . Sarah | 28 | Australia | . .",
+            "content": ". Name Age Country . John | 25 | USA | . Emily | 30 | Canada | . David | 22 | UK | . Sarah | 28 | Australia | . .",
             "url": "https://icygs.github.io/Krish-CSA/college%20board/2023/06/05/Javascript-Checkout.html",
             "relUrl": "/college%20board/2023/06/05/Javascript-Checkout.html",
             "date": " • Jun 5, 2023"
