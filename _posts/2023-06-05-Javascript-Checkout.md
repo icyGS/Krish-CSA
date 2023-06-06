@@ -7,7 +7,7 @@ categories: [college board]
 title: Javascript Checkout
 ---
 
-<!DOCTYPE html>
+
 <html>
 <head>
   <style>
