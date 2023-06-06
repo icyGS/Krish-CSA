@@ -242,13 +242,11 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Number of Ice Creams: 4
+<pre>Number of Ice Creams: 0
 Non-melted Ice Creams: 
-2. Vanilla  Life: 5.0 minutes, 100
-3. Chocolate  Life: 3.0 minutes, 200
-4. Vanilla  Life: 1.0 minutes
-5. Chocolate  Life: 1.0 minutes
-Number of Ice Creams: 6
+0. Vanilla  Life: 1.0 minutes
+1. Chocolate  Life: 1.0 minutes
+Number of Ice Creams: 2
 </pre>
 </div>
 </div>
@@ -277,22 +275,8 @@ Number of Ice Creams: 6
     <span class="p">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeIceCreamLife</span><span class="p">()</span> <span class="p">{</span>  
-        <span class="kd">final</span> <span class="kt">int</span> <span class="n">iceCreamThreshold</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// constant for simulation</span>
-
-        <span class="c1">// ice cream must have life to be eaten</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">life</span> <span class="o">&gt;</span> <span class="n">created</span><span class="p">)</span> <span class="p">{</span>
-
-            <span class="k">this</span><span class="p">.</span><span class="na">scoops</span> <span class="o">+=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="n">iceCreamThreshold</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span>  <span class="c1">// ice cream checkout simulator</span>
-            <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">scoops</span> <span class="o">&gt;=</span> <span class="n">iceCreamThreshold</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">this</span><span class="p">.</span><span class="na">scoops</span> <span class="o">-=</span> <span class="n">iceCreamThreshold</span><span class="p">;</span>
-                <span class="k">this</span><span class="p">.</span><span class="na">setIceCreamLife</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>   <span class="c1">// adds MINUTE to ice cream life</span>
-            <span class="p">}</span> 
-            <span class="k">else</span> <span class="p">{</span>
-                <span class="kd">super</span><span class="p">.</span><span class="na">removeIceCreamLife</span><span class="p">();</span>   <span class="c1">// removes life from ice cream</span>
-            <span class="p">}</span>
-
-        <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeIceCreamLife</span><span class="p">(){</span>
+        <span class="n">life</span> <span class="o">-=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">IceCream</span><span class="p">.</span><span class="na">MINUTE</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="nd">@Override</span>
@@ -305,7 +289,8 @@ Number of Ice Creams: 6
         
         <span class="n">Gelato</span><span class="o">[]</span> <span class="n">gelatos</span> <span class="o">=</span> <span class="p">{</span>
             <span class="k">new</span> <span class="n">Gelato</span><span class="p">(</span><span class="s">"Vanilla Gelato"</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
-            <span class="k">new</span> <span class="n">Gelato</span><span class="p">(</span><span class="s">"Chocolate Gelato"</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+            <span class="k">new</span> <span class="n">Gelato</span><span class="p">(</span><span class="s">"Chocolate Gelato"</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
+            <span class="k">new</span> <span class="n">Gelato</span><span class="p">(</span><span class="s">"Strawberry Gelato"</span><span class="p">,</span> <span class="mi">450</span><span class="p">)</span>
         <span class="p">};</span>
 
         <span class="k">for</span><span class="p">(</span><span class="n">Gelato</span> <span class="n">gelato</span><span class="p">:</span> <span class="n">gelatos</span><span class="p">){</span>
@@ -328,10 +313,11 @@ Number of Ice Creams: 6
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Number of Ice Creams: 6
-6. Vanilla Gelato  Life: 6.0 minutes, 100
-7. Chocolate Gelato  Life: 6.0 minutes, 200
-Number of Ice Creams: 8
+<pre>Number of Ice Creams: 2
+2. Vanilla Gelato  Life: 6.0 minutes, 100
+3. Chocolate Gelato  Life: 6.0 minutes, 200
+4. Strawberry Gelato  Life: 6.0 minutes, 450
+Number of Ice Creams: 5
 </pre>
 </div>
 </div>
@@ -405,40 +391,35 @@ Number of Ice Creams: 8
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Minute: 0
 Non-melted Ice Creams: 
-2. Vanilla  Life: 5.0 minutes, 100
-3. Chocolate  Life: 3.0 minutes, 200
-4. Vanilla  Life: 1.0 minutes
-5. Chocolate  Life: 1.0 minutes
-6. Vanilla Gelato  Life: 6.0 minutes, 100
-7. Chocolate Gelato  Life: 6.0 minutes, 200
+0. Vanilla  Life: 1.0 minutes
+1. Chocolate  Life: 1.0 minutes
+2. Vanilla Gelato  Life: 6.0 minutes, 100
+3. Chocolate Gelato  Life: 6.0 minutes, 200
+4. Strawberry Gelato  Life: 6.0 minutes, 450
 
 Minute: 1
 Non-melted Ice Creams: 
-2. Vanilla  Life: 6.0 minutes, 100
-3. Chocolate  Life: 2.0 minutes, 200
-6. Vanilla Gelato  Life: 5.0 minutes, 100
-7. Chocolate Gelato  Life: 7.0 minutes, 200
+2. Vanilla Gelato  Life: 5.0 minutes, 100
+3. Chocolate Gelato  Life: 5.0 minutes, 200
+4. Strawberry Gelato  Life: 5.0 minutes, 450
 
 Minute: 2
 Non-melted Ice Creams: 
-2. Vanilla  Life: 7.0 minutes, 100
-3. Chocolate  Life: 3.0 minutes, 200
-6. Vanilla Gelato  Life: 6.0 minutes, 100
-7. Chocolate Gelato  Life: 6.0 minutes, 200
+2. Vanilla Gelato  Life: 5.0 minutes, 100
+3. Chocolate Gelato  Life: 5.0 minutes, 200
+4. Strawberry Gelato  Life: 5.0 minutes, 450
 
 Minute: 3
 Non-melted Ice Creams: 
-2. Vanilla  Life: 6.0 minutes, 100
-3. Chocolate  Life: 4.0 minutes, 200
-6. Vanilla Gelato  Life: 7.0 minutes, 100
-7. Chocolate Gelato  Life: 7.0 minutes, 200
+2. Vanilla Gelato  Life: 4.0 minutes, 100
+3. Chocolate Gelato  Life: 4.0 minutes, 200
+4. Strawberry Gelato  Life: 4.0 minutes, 450
 
 Minute: 4
 Non-melted Ice Creams: 
-2. Vanilla  Life: 5.0 minutes, 100
-3. Chocolate  Life: 3.0 minutes, 200
-6. Vanilla Gelato  Life: 8.0 minutes, 100
-7. Chocolate Gelato  Life: 8.0 minutes, 200
+2. Vanilla Gelato  Life: 4.0 minutes, 100
+3. Chocolate Gelato  Life: 4.0 minutes, 200
+4. Strawberry Gelato  Life: 4.0 minutes, 450
 
 </pre>
 </div>
